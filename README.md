@@ -14,6 +14,19 @@
 |email|string|null: false|
 |password|string|null: false|
 |username|string|null: false|
+|name|string|null: false|
+|kananame|string|null: false|
+|birthday|date|null: false|
+|name_to_send|string||
+|kananame_to_send|string||
+|post_number|interger||
+|name_to_send|string||
+|prefecture|string||
+|city|string||
+|house_number|string||
+|building_name|string||
+|phone_number|string||
+
 ### Association
 - has_many :comments
 - has_many :items, through: :users_items
@@ -38,7 +51,7 @@
 - has_many :images
 - has_many :users, through: :users_items
 - has_many :categorys, through: :items_categorys
-- belongs_to :bland
+- belongs_to :brand
 
 ## items_categorysテーブル
 |Column|Type|Options|
@@ -69,7 +82,7 @@
 ### Association
 - belongs_to :item
 
-## blandsテーブル
+## brandsテーブル
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
