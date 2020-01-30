@@ -1,4 +1,6 @@
 # README
+https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
+
 ## commentsテーブル
 <!-- commentは１ー多の関係をuserと持っている -->
 <!-- commentは一対多の関係をitemsと持っている -->
@@ -35,7 +37,6 @@
 - has_many :comments
 - has_many :items
 
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -58,18 +59,15 @@
 - has_many :images 
 - has_many :comments
 
-
 ## categorysテーブル
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 
-
 ### Association
 - has_many :items
 - has_many :sizes, through: :categorys_sizes
-
 
 ## imagesテーブル
 <!-- userは多-多の関係をitemと持っている -->
@@ -89,7 +87,6 @@
 ### Association
 - has_many :items
 
-
 ## sizesテーブル
 |colunu|Type|options|
 |------|----|-------|
@@ -108,7 +105,6 @@
 ### Asociation
 - belongs_to :size
 - belongs_to :category
-
 
 
 This README would normally document whatever steps are necessary to get the
