@@ -6,7 +6,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.4', '>= 5.2.4.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'mysql2', '>= 0.3.18', '< 0.6.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -58,6 +58,10 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :production do
+  gem 'unicorn', '5.4.1'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -70,3 +74,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'pry-rails'
+
+
+
+
