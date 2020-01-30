@@ -9,7 +9,7 @@
 |item|string|null: false|
 ### Association
 - belongs_to :users
-- belongs_to :items
+- belongs_to :item
 
 ## usersテーブル
 <!-- userは多-多の関係をitemと持っている -->
