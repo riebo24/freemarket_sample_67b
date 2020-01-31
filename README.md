@@ -1,84 +1,81 @@
 # README
+https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
+
 ## commentsテーブル
 <!-- commentは１ー多の関係をuserと持っている -->
+<!-- commentは一対多の関係をitemsと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
+- belongs_to :user
+- belongs_to :item
 
 ## usersテーブル
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
+|nickname|string|null: false,limit:15|
+|emall|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
-|name|string|null: false|
-|kananame|string|null: false|
-|birthday|date|null: false|
-|name_to_send|string||
-|kananame_to_send|string||
-|post_number|interger||
-|name_to_send|string||
-|prefecture|string||
-|city|string||
-|house_number|string||
+|first_name|string|null: false,limit:30|
+|last_name|string|null: false,limit:30|
+|first_kane|string|null: false,limit:30|
+|last_kane|string|null: false,limit:30|
+|post_number|interger|null: false|
+|prefecture|string|null: false|
+|city|string|null: false|
+|house_number|string|null: false|
 |building_name|string||
 |phone_number|string||
-
+|birthday|date|null: false|
+|card|date|null: false|
+|profile|string|null: false|
 ### Association
 - has_many :comments
-- has_many :items, through: :users_items
-
-## users_itemsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
-### Association
-- belongs_to :user
-- belongs_to :item
+- has_many :items
 
 ## itemsテーブル
-<!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
-### Association
-- has_many :images
-- has_many :users, through: :users_items
-- has_many :categorys, through: :items_categorys
-- belongs_to :brand
-
-## items_categorysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|category|references|null: false, foreign_key: true|
-|item|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|name|string|null: false|
+|price|integer|null: false|
+|status|string|null: false|
+|cost|interger|null: false|
+|delivery|interger|null: false|
+|category_id|references|null: false, foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
+|brand_id|references|foreign_key: true|
+|deal|boolean|null: false|
 ### Association
 - belongs_to :category
-- belongs_to :item
+- belongs_to :size
+- belongs_to :brand
+- belongs_to :user
+- has_many :images 
+- has_many :comments
 
 ## categorysテーブル
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
+
 ### Association
-- has_many :items, through: :items_categorys
+- has_many :items
+- has_many :sizes, through: :categorys_sizes
 
 ## imagesテーブル
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
+|image_name|string|null: false|
+|item_id|reference|null: false, foreign_key: true|
+
 ### Association
 - belongs_to :item
 
@@ -86,11 +83,28 @@
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false|
-|password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :items
+
+## sizesテーブル
+|colunu|Type|options|
+|------|----|-------|
+|size|string|null: false|
+
+### Asociation
+- has_many :items
+- has_many :categorys, through: :categorys_sizes
+
+## categorys_sizesテーブル
+|colunu|Type|options|
+|------|----|-------|
+|category_id|references|null: false, foreign_key: true|
+|size_id|references|null: false, foreign_key: true|
+
+### Asociation
+- belongs_to :size
+- belongs_to :category
 
 
 This README would normally document whatever steps are necessary to get the
