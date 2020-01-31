@@ -10,12 +10,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name,          null: false, limit:30
       t.string :first_kane,         null: false, limit:30
       t.string :last_kane,          null: false, limit:30
-      t.interger :post_number,      null: false
+      t.integer :post_number,      null: false
       t.string :prefecture,         null: false
       t.string :city,               null: false
       t.string :house_number,       null: false
-      t.string :building_name, 
-      t.string :phone_number, 
+      t.string :building_name
+      t.string :phone_number 
       t.date :birthday,             null: false
       t.date :card, null: false
       t.string :profile	,           null: false

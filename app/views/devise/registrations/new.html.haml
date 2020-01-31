@@ -1,13 +1,20 @@
+.backfiled
+
+.header
+  = render 'devise/shared/header'
+
+.main
 %h2 会員情報入力
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
+
   .field
     = f.label :nickname
-    = f.text_field :nickname, autofocus: true, autocomplete: "ニックネーム"
+    = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎'
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "メールアドレス"
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC.携帯どちらでも可能'
     
   .field
     = f.label :password
@@ -15,11 +22,11 @@
       %em
         (#{@minimum_password_length} characters minimum)
     %br/
-    = f.password_field :password, autocomplete: "パスワード"
+    = f.password_field :password, autocomplete: "password", placeholder: 'パスワード'
   .field
     = f.label :password_confirmation
     %br/
-    = f.password_field :password_confirmation, autocomplete: "パスワード（もう一度確認のために入れてください）"
+    = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（もう一度確認のために入れてください）'
 
   .field
     本人確認
@@ -30,8 +37,48 @@
         お名前（全角）
       .fielf__name__notice
         必須
+    .field__name-tag
+      = f.text_field :last_name, autofocus: true, class: 'field__name-tag__lastname', placeholder: '例）山田'
+      = f.text_field :last_name, autofocus: true, class: 'field__name-tag__firsttname', placeholder: '例）真'
+
+  .field
+    .field__kananame
+      .fielf__kananame__title
+        お名前カナ（全角）
+      .fielf__kananame__notice
+        必須
+    .field__kananame-tag
+      = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__lastname', placeholder: '例）ヤマダ'
+      = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__firsttname', placeholder: '例）マコト'
+
+  .field
+    .field__birthday
+      .fielf__birthday__title
+        生年月日
+      .fielf__birthday__notice
+        必須
+    .field__birthday
+      = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__lastname', placeholder: '例）20200221'
+      .field__birthday__detail
+        ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+  
+  .consent
+    「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
+
+  = link_to "#", class: "step-forward" do
+    次へ進む
+  
+  .explanation-personal 
+    本人情報の登録について
+
+  .explanation-site
+    This site is protected by reCAPTCHA and the Google Privacy Policy() and Terms of Service() apply.
 
 
   .actions
     = f.submit "登録する"
 = render "devise/shared/links"
+
+.footer
+  = render 'devise/shared/footer'
+

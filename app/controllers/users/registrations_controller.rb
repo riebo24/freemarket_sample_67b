@@ -25,9 +25,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_paramas
-    params.require(:user).permit()
+    params.require(:user).permit(:nickname, :password, :first_name,:last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email)
     
   end
+
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
