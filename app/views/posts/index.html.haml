@@ -1,11 +1,21 @@
 .top
+  .fixed_btn
+    = link_to "botann"
   .top__header
     .top__header__a
+      %h1 
+        = image_tag "logo.png", class: "image100" , height: "45px" , width: "140px"
       = form_with(url: root_path, local: true, method: :get) do |f|
-        = f.text_field :keyword, placeholder: "キーワード", class: "aaaa"
-        = f.submit "画像", class: "aaaaaa"
+        = f.text_field :keyword, placeholder: "キーワードから探す", class: "serch1"
+        = image_submit_tag 'icon-search 1.png' , height: '20px' , width: '20px' , class: 'logoo'
+        
     .top__header__b
-      = link_to "トップページに戻る", :back, class: 'btn'
+      .top__header__b__1
+        = link_to "カテゴリー",  class: 'btn'
+        = link_to "ブランド",  class: 'btn'
+      .top__header__b__2
+        = link_to "ログイン",  class: 'btn'
+        = link_to "新規登録",  class: 'btn'
 
   .top__main
 
@@ -55,6 +65,13 @@
         .top__footer__description__left__a
           = link_to 'お知らせ', '#', class: 'makoto'
 
-    .top__footer__bottom
+    .top__footer__bottom__a
+      %h1 
+        = image_tag "logo-white.png", class: "image" , height: "40px" , width: "140px"
+      © FURIMA
+
+  
+
+  
      
       

@@ -2,13 +2,18 @@
 
   &__header{              
     width: 80%;                
-    height: 100px;   
+    height: 90px;   
     background-color: #fff;
-    margin: 10px auto;
+    margin: 20px 10px 10px 10px;
     padding: 0px 120px 0px 120px;
-  
     &__a{
-      
+      display: flex;
+      position: relative;
+    }
+    &__b{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
     }
   }
   &__main {
@@ -97,11 +102,11 @@
       }
     }
   }
-  .top__footer__bottom{
+  .top__footer__bottom__a{
     text-align:center;
     color: white;
-   
   }
+ 
 }
 
 .top__footer__description__left__a > a{
@@ -109,4 +114,48 @@
   text-decoration: none;
   font-size: 12px;
   line-height: 32px;
+}
+.top__header__b__1 > a{
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+  font-size: 14px;
+  background-position: center right;
+  background-size: 18px;
+  padding-right: 30px;
+
+}
+.top__header__b__2 > a{
+  color: #333;
+  text-decoration: none;
+  line-height: 32px;
+  font-size: 14px;
+  background-position: center right;
+  background-size: 18px;
+  padding-right: 30px;
+
+}
+.serch1{
+  margin: 2px 0 0 30px;
+  width: 800px;
+  height: 30px;
+  
+}
+
+.logoo{
+  background-color: #3cc1ce;
+  position: absolute;
+ 
+  background-size: cover;
+  padding: 8px;
+}
+
+.fixed_btn{
+  position: fixed;
+  bottom: 20px; 
+  right: 20px;
+  width: 150px;
+  height: 150px;
+  background-color: #3cc1ce;
+
 }
