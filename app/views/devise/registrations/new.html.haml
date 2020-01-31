@@ -10,6 +10,7 @@
 
   .field
     = f.label :nickname
+    %br/
     = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎'
   .field
     = f.label :email
@@ -29,7 +30,10 @@
     = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（もう一度確認のために入れてください）'
 
   .field
-    本人確認
+    .field__identification
+      本人確認
+    .field__identification-notice
+      安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
 
   .field
     .field__name
@@ -57,10 +61,37 @@
         生年月日
       .fielf__birthday__notice
         必須
-    .field__birthday
       = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__lastname', placeholder: '例）20200221'
       .field__birthday__detail
         ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+  .field
+    .field__address
+      住所登録
+    .field__prefecture
+      = f.label :post_number, "郵便番号(必須)"
+      = f.text_field :post_number, autofocus: true, class: 'field__address__prefecture', placeholder: '1234567'
+    .field__prefecture
+      = f.label :prefecture, "都道府県(必須)"
+      = f.text_field :prefecture, autofocus: true, class: 'field__address__prefecture', placeholder: '東京都'
+    .field__city
+      = f.label :city, "市町村(必須)"
+      = f.text_field :city, autofocus: true, class: 'field__address__prefecture', placeholder: '大阪市'
+    .field__house-number
+      = f.label :house_number, "番地(必須)"
+      = f.text_field :house_number, autofocus: true, class: 'field__address__prefecture', placeholder: '１−１−１'
+    .field__building-name
+      = f.label :building_name, "建物名(任意)"
+      = f.text_field :building_name, autofocus: true, class: 'field__address__prefecture', placeholder: '小見マンション'
+    .field__phone-number
+      = f.label :phone_number , "電話番号(任意)"
+      = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: '0901234567'
+    .field__card
+      = f.label :card , "カード番号(任意)"
+      = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: 'スペースは不要です'
+    .field__profile
+      = f.label :card , "自己紹介など(必須)"
+      = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: '私はビートルズのファンです'
   
   .consent
     「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
@@ -81,4 +112,3 @@
 
 .footer
   = render 'devise/shared/footer'
-

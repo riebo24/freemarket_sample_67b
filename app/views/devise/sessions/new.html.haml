@@ -1,17 +1,25 @@
-%h2 Log in
+.new-registration
+  .new-registration__guide
+    アカウントをお持ちでない方はこちら
+  = link_to new_user_registration_path, class: "new-registration__btn" do
+    新規会員登録
+  
+
+%h2 ログイン画面
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    -# = f.label :email
+    -# %br/
+    = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'メールアドレス'
   .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
+    -# = f.label :password
+    -# %br/
+    = f.password_field :password, autocomplete: "current-password", placeholder: 'パスワード'
+  -# - if devise_mapping.rememberable?
+  -#   .field
+  -#     = f.check_box :remember_me
+  -#     = f.label :remember_me
   .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+    = f.submit "ログイン"
+
+= link_to "パスワードを忘れの方", new_password_path(resource_name)
