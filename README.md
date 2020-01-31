@@ -56,7 +56,7 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 - belongs_to :size
 - belongs_to :brand
 - belongs_to :user
-- has_many :images 
+- has_many :images
 - has_many :comments
 
 ## categorysテーブル
