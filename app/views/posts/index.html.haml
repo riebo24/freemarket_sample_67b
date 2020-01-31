@@ -1,7 +1,21 @@
 .top
+  .fixed_btn
+    = link_to "botann"
   .top__header
     .top__header__a
-
+      %h1 
+        = image_tag "logo.png", class: "image100" , height: "45px" , width: "140px"
+      = form_with(url: root_path, local: true, method: :get) do |f|
+        = f.text_field :keyword, placeholder: "キーワードから探す", class: "serch1"
+        = image_submit_tag 'icon-search 1.png' , height: '20px' , width: '20px' , class: 'logoo'
+        
+    .top__header__b
+      .top__header__b__1
+        = link_to "カテゴリー",  class: 'btn'
+        = link_to "ブランド",  class: 'btn'
+      .top__header__b__2
+        = link_to "ログイン",  class: 'btn'
+        = link_to "新規登録",  class: 'btn'
 
   .top__main
 
@@ -9,10 +23,54 @@
     %top__introduction__top
       FURIMAが選ばれる3つの理由 
 
+  .top__image
+    
 
+  .top__fulima
+
+  .top__category
+
+  .top__brand
+
+  .top__download
+  
 
   .top__footer
-    .top__footer__a
-    .top__footer__b
-    .top__footer__c
+    .top__footer__description
+      .top__footer__description__left
+        FURIMAについて
+        .top__footer__description__left__a
+          = link_to '会社概要（運営会社）', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'プライバシーポリシー', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'FURIMA利用規則', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'ポイントに関する特約', '#', class: 'makoto'
 
+
+      .top__footer__description__senta
+        FURIMAを見る
+        .top__footer__description__left__a
+          = link_to 'カテゴリー一覧', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'ブランド一覧', '#', class: 'makoto'
+
+      .top__footer__description__right
+        ヘルプ＆ガイド
+        .top__footer__description__left__a
+          = link_to 'FURIMAガイド', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'FURIMAロゴ利用ガイド', '#', class: 'makoto'
+        .top__footer__description__left__a
+          = link_to 'お知らせ', '#', class: 'makoto'
+
+    .top__footer__bottom__a
+      %h1 
+        = image_tag "logo-white.png", class: "image" , height: "40px" , width: "140px"
+      © FURIMA
+
+  
+
+  
+  
