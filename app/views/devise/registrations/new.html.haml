@@ -9,23 +9,23 @@
     = render "devise/shared/error_messages", resource: resource
 
     .field
-      = f.label :nickname
+      = f.label :nickname, "ニックネーム"
       %br/
       = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎'
     .field
-      = f.label :email
+      = f.label :email, "メールアドレス"
       %br/
       = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC.携帯どちらでも可能'
       
     .field
-      = f.label :password
-      - if @minimum_password_length
-        %em
-          (#{@minimum_password_length} characters minimum)
+      = f.label :password, "パスワード"
+      -# - if @minimum_password_length
+      -#   %em
+      -#     (#{@minimum_password_length} characters minimum)
       %br/
       = f.password_field :password, autocomplete: "password", placeholder: 'パスワード'
     .field
-      = f.label :password_confirmation
+      = f.label :password_confirmation, "パスワード(確認用)"
       %br/
       = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（もう一度確認のために入れてください）'
 

@@ -6,7 +6,7 @@
   text-align: center;
   margin: 0 auto;
   background-color: white;
-  
+  padding: 5px 0;
 
 &__new-registration {
   text-align: center;
@@ -76,14 +76,15 @@
     
   }
  }
-}
-
-.reset-password {
+&__reset-password {
   display: block;
   margin-top: 40px;
   color: #0099e8;
   text-decoration: none;
-  margin-left: 32%;
+  margin-left: 8%;
   background-color: white;
   width: 41%;
 }
+}
+
+

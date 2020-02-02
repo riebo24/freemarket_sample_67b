@@ -21,7 +21,7 @@
       .login-field__actions
         = f.submit "ログイン", class: 'login-field__actions__btn'
 
-  = link_to "パスワードを忘れの方", new_password_path(resource_name), class: 'reset-password'
+    = link_to "パスワードを忘れの方", new_password_path(resource_name), class: 'login-field__reset-password'
 
   .footer
     = render 'devise/shared/footer'
