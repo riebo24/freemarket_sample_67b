@@ -1,114 +1,153 @@
 .background
-
+  
   .headder
     = render 'devise/shared/header'
+    
+  .field-base
+    .main
+      %h2 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+    
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :nickname, "ニックネーム", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎', class: 'main__fields__element__text'
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :email, "メールアドレス", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC.携帯どちらでも可能', class: 'main__fields__element__text'
+        
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :password, "パスワード", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+          = f.password_field :password, autocomplete: "password", placeholder: '７文字以上のパスワード', class: 'main__fields__element__text'
 
-  .main
-  %h2 会員情報入力
-  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = render "devise/shared/error_messages", resource: resource
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :password_confirmation, "パスワード(確認用)", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（確認用）', class: 'main__fields__element__text'
 
-    .field
-      = f.label :nickname, "ニックネーム"
-      %br/
-      = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎'
-    .field
-      = f.label :email, "メールアドレス"
-      %br/
-      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'PC.携帯どちらでも可能'
+      .main__field
+        %h3 本人確認
+        .main__field__text
+          安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            .main__fields__element__title__label
+            お名前（全角）
+            .main__fields__element__title__notice
+              必須
+        .main__fields__name
+          = f.text_field :last_name, autofocus: true, class: 'main__fields__name__tag1', placeholder: '例）山田'
+          = f.text_field :last_name, autofocus: true, class: 'main__fields__name__tag2', placeholder: '例）真'
+
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            .main__fields__element__title__label
+            お名前カナ（全角）
+            .main__fields__element__title__notice
+              必須
+        .main__fields__name
+          = f.text_field :last_kane, autofocus: true, class: 'main__fields__name__tag1', placeholder: '例）ヤマダ'
+          = f.text_field :last_kane, autofocus: true, class: 'main__fields__name__tag2', placeholder: '例）マコト'
+
+      .main__fields
+        .main__fields__element
+          .main__fields__element__title
+            .main__fields__element__title__label
+              生年月日
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :last_kane, autofocus: true, class: 'main__fields__element__text', placeholder: '例）20200221'
+
+      .main__fields
+        %h2 住所登録         
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :post_number, "郵便番号", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :post_number, autofocus: true, class: 'main__fields__element__text', placeholder: '1234567'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :prefecture, "都道府県", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :prefecture, autofocus: true, class: 'main__fields__element__text', placeholder: '東京都'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :city, "市町村", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :city, autofocus: true, class: 'main__fields__element__text', placeholder: '大阪市'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :house_number, "番地", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :house_number, autofocus: true, class: 'main__fields__element__text', placeholder: '１−１−１'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :building_name, "建物名", class: 'main__fields__element__title__label'
+            .main__fields__element__title__selective
+              任意
+          = f.text_field :building_name, autofocus: true, class: 'main__fields__element__text', placeholder: '小見マンション'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :phone_number , "電話番号", class: 'main__fields__element__title__label'
+            .main__fields__element__title__selective
+              任意
+          = f.text_field :phone_number , autofocus: true, class: 'main__fields__element__text', placeholder: '0901234567'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :card , "カード番号", class: 'main__fields__element__title__label'
+            .main__fields__element__title__selective
+              任意
+          = f.text_field :phone_number , autofocus: true, class: 'main__fields__element__text', placeholder: 'スペースは不要です'
+        .main__fields__element
+          .main__fields__element__title
+            = f.label :card , "自己紹介など", class: 'main__fields__element__title__label'
+            .main__fields__element__title__notice
+              必須
+          = f.text_field :phone_number , autofocus: true, class: 'main__fields__element__text', placeholder: '私はビートルズのファンです'
       
-    .field
-      = f.label :password, "パスワード"
-      -# - if @minimum_password_length
-      -#   %em
-      -#     (#{@minimum_password_length} characters minimum)
-      %br/
-      = f.password_field :password, autocomplete: "password", placeholder: 'パスワード'
-    .field
-      = f.label :password_confirmation, "パスワード(確認用)"
-      %br/
-      = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（もう一度確認のために入れてください）'
+      -# .consent(余力があればウィザード仕様に変更する)
+      -#   「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
 
-    .field
-      .field__identification
-        本人確認
-      .field__identification-notice
-        安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      -# = link_to "#", class: "step-forward" do
+      -#   次へ進む
+      
+      .main__explanation
+        .main__explanation__personal 
+          本人情報の登録について
 
-    .field
-      .field__name
-        .fielf__name__title
-          お名前（全角）
-        .fielf__name__notice
-          必須
-      .field__name-tag
-        = f.text_field :last_name, autofocus: true, class: 'field__name-tag__lastname', placeholder: '例）山田'
-        = f.text_field :last_name, autofocus: true, class: 'field__name-tag__firsttname', placeholder: '例）真'
-
-    .field
-      .field__kananame
-        .fielf__kananame__title
-          お名前カナ（全角）
-        .fielf__kananame__notice
-          必須
-      .field__kananame-tag
-        = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__lastname', placeholder: '例）ヤマダ'
-        = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__firsttname', placeholder: '例）マコト'
-
-    .field
-      .field__birthday
-        .fielf__birthday__title
-          生年月日
-        .fielf__birthday__notice
-          必須
-        = f.text_field :last_kane, autofocus: true, class: 'field__kananame-tag__lastname', placeholder: '例）20200221'
-        .field__birthday__detail
+        .main__explanation__detail
           ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
 
-    .field
-      .field__address
-        住所登録
-      .field__prefecture
-        = f.label :post_number, "郵便番号(必須)"
-        = f.text_field :post_number, autofocus: true, class: 'field__address__prefecture', placeholder: '1234567'
-      .field__prefecture
-        = f.label :prefecture, "都道府県(必須)"
-        = f.text_field :prefecture, autofocus: true, class: 'field__address__prefecture', placeholder: '東京都'
-      .field__city
-        = f.label :city, "市町村(必須)"
-        = f.text_field :city, autofocus: true, class: 'field__address__prefecture', placeholder: '大阪市'
-      .field__house-number
-        = f.label :house_number, "番地(必須)"
-        = f.text_field :house_number, autofocus: true, class: 'field__address__prefecture', placeholder: '１−１−１'
-      .field__building-name
-        = f.label :building_name, "建物名(任意)"
-        = f.text_field :building_name, autofocus: true, class: 'field__address__prefecture', placeholder: '小見マンション'
-      .field__phone-number
-        = f.label :phone_number , "電話番号(任意)"
-        = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: '0901234567'
-      .field__card
-        = f.label :card , "カード番号(任意)"
-        = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: 'スペースは不要です'
-      .field__profile
-        = f.label :card , "自己紹介など(必須)"
-        = f.text_field :phone_number , autofocus: true, class: 'field__address__prefecture', placeholder: '私はビートルズのファンです'
-    
-    .consent
-      「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
-
-    = link_to "#", class: "step-forward" do
-      次へ進む
-    
-    .explanation-personal 
-      本人情報の登録について
-
-    .explanation-site
-      This site is protected by reCAPTCHA and the Google Privacy Policy() and Terms of Service() apply.
-
-
-    .actions
-      = f.submit "登録する"
-  = render "devise/shared/links"
+        .main__explanation__site
+          This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+        .main__explanation__action
+          = f.submit "登録する"
+    -# = render "devise/shared/links"
 
   .footer
     = render 'devise/shared/footer'
