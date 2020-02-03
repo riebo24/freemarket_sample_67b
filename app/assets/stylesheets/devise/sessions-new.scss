@@ -1,0 +1,90 @@
+.login-field{
+  max-width: none;
+  width: 456px;
+  height: 100％;
+  overflow: scroll;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  padding: 5px 0;
+
+&__new-registration {
+  text-align: center;
+  &__guide {
+    font-size: 14px;
+  }
+  &__btn {
+    display: block;
+    margin: 8px 10% 0;
+    border: 1px solid #0099e8;
+    background: #0099e8;
+    color: #fff;
+    line-height: 40px;
+    text-decoration: none;
+    width: 80%;
+  }
+}
+
+&__h2 {
+}
+
+&__field {
+  &__mail {
+    margin: 0;
+    width: 70%;
+    height: 24px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+}
+  
+&__field {
+  &__passwaord {
+    margin: 24px 0 0;
+    width: 70%;
+    height: 24px;
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    line-height: 1.5;
+    font-size: 16px;
+  }
+}
+
+&__actions {
+  margin: 24px 0 0;
+  
+  &__btn {
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    display: block;
+    width: 80%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 10%;
+    
+  }
+ }
+&__reset-password {
+  display: block;
+  margin-top: 40px;
+  color: #0099e8;
+  text-decoration: none;
+  margin-left: 8%;
+  background-color: white;
+  width: 41%;
+}
+}
+
+
