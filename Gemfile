@@ -83,6 +83,5 @@ gem 'pry-rails'
 gem 'erb2haml'
 gem 'fog-aws'
 
-
-
+gem 'ancestry'
 
