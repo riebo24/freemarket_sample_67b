@@ -4,6 +4,7 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
+
 default: &default
   adapter: mysql2
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -27,10 +28,7 @@ test:
 production:
   <<: *default
   database: freemarket_sample_67b_production
-  # username: root
-  # password: <%= ENV['DATABASE_PASSWORD'] %>
-  # socket: /var/lib/mysql/mysql.sock
-
-
-
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
 
