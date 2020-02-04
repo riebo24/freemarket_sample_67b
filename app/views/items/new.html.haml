@@ -65,17 +65,17 @@
         .main__sell__content__item__input
           .main__sell__content__item__input__top
             %P
-            %a{href:'#', target: '_blank'} 禁止されている出品
+            = link_to "禁止されている出品",'#'
             、
-            %a{href: '#', target: '_blank'} 行為
+            = link_to "行為",'#'
             を必ずご確認ください。
-            %p
-              またブランド品でシリアルナンバー等がある場合はご記載ください。
-            %a{href: '#', target: '_blank'} 偽ブランドの販売
+            %br
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売",'#'
             は犯罪であり処罰される可能性があります。
-            %p
-              また、出品をもちまして
-            %a{href: '#', target: '_blank'} 加盟店規約
+            %br
+            また、出品をもちまして
+            = link_to "加盟店規約",'#'
             に同意したことになります。
           .main__sell__content__item__input__middle
             = form_for '@item' do |f|
@@ -87,9 +87,9 @@
 
     .main__sell__footer
       .main__sell__footer__link
-        %a{ href: '#'} プライバシーポリシー
-        %a{ href: '#'} メルカリ利用規約
-        %a{ href: '#'} 特定商取引に関する表記
+        = link_to "プライバシーポリシー",'#'
+        = link_to "メルカリ利用規約",'#'
+        = link_to "特定商取引に関する表記",'#'
       .main__sell__footer__logo
         = image_tag "logo-white.png", size: "193x49"
       %small © FURIMA, Inc.
