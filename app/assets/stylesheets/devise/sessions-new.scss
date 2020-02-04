@@ -10,6 +10,7 @@
 
 &__new-registration {
   text-align: center;
+  margin-top: 200px;
   &__guide {
     font-size: 14px;
   }
@@ -25,7 +26,8 @@
   }
 }
 
-&__h2 {
+& h2 {
+  margin: 20px 0;
 }
 
 &__field {
@@ -83,7 +85,7 @@
   text-decoration: none;
   margin-left: 8%;
   background-color: white;
-  width: 41%;
+  width: 50%;
 }
 }
 
