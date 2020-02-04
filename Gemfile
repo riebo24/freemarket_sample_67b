@@ -85,3 +85,5 @@ gem 'fog-aws'
 
 gem 'ancestry'
 
+gem 'jquery-rails'
+
