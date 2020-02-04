@@ -9,19 +9,24 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def create
    @user = User.create(user_paramas)
+   if current_user.create(user_params)
+        # redirect_to root_path(user登録のshow actionを行うようにする)
+      else
+        render :new
+      end
 
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-    if current_user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
-  end
+  # def update
+  #   if current_user.update(user_params)
+  #     redirect_to root_path
+  #   else
+  #     render :edit
+  #   end
+  # end
 
   private
 
