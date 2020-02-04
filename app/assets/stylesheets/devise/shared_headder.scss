@@ -1,9 +1,28 @@
-.items {
-  height: 128px;
-  text-align: center;
-  background: #f5f5f5;
-  margin-top: 0;
-  &__logo {
-    padding-top: 40px;
-  }
-}
+// .items {
+//   height: 128px;
+//   text-align: center;
+//   background: #f5f5f5;
+//   margin-top: 0;
+//   &__logo {
+//     padding-top: 40px;
+//   }
+// }
+
+.main {
+  width: 100vw;
+  background-color: rgb(241, 241, 241);
+  display: flex;
+  justify-content: center;
+  &__sell {
+    border-style: solid;
+    border-width: 0;
+    &__header {
+      width: 100vw; max-width: 700px;
+      height: 128px;
+      padding-top: 40px;
+      text-align: center;
+    }
+    
+    }
+    
+    }
