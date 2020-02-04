@@ -1,7 +1,6 @@
 .top
   .fixed_btn
-    .top-text
-      出品する
+    = link_to "出品する", new_item_path, class: 'top-text'
     = image_submit_tag 'icon_camera.png' , height: '50%' , width: '50%' , class: 'logooo'
   .top__header
     .top__header__a
@@ -16,5 +15,5 @@
         = link_to "カテゴリー",  class: 'btn1'
         = link_to "ブランド",  class: 'btn1'
       .top__header__b__2
-        = link_to "ログイン",  class: 'btn1'
-        = link_to "新規会員登録",  class: 'btn1'
+        = link_to "ログイン", new_user_session_path, class: 'btn1'
+        = link_to "新規会員登録", new_user_registration_path, class: 'btn1'

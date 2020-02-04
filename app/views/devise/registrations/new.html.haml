@@ -1,7 +1,7 @@
 .background2
   
   .headder
-    = render 'devise/shared/header'
+    = render 'devise/shared/headder'
     
   .field-base
     .main-user
@@ -30,9 +30,6 @@
             = f.label :password, "パスワード", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-        -# - if @minimum_password_length
-        -#   %em
-        -#     (#{@minimum_password_length} characters minimum)
           = f.password_field :password, autocomplete: "password", placeholder: '７文字以上のパスワード', class: 'main-user__fields__element__text'
 
       .main-user__fields
