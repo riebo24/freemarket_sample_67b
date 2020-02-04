@@ -1,7 +1,6 @@
 .login-field{
   max-width: none;
   width: 456px;
-  height: calc(100vh - 348px);
   overflow: scroll;
   text-align: center;
   margin: auto;
@@ -25,7 +24,8 @@
   }
 }
 
-&__h2 {
+& h2 {
+  margin: 20px 0;
 }
 
 &__field {
@@ -83,7 +83,7 @@
   text-decoration: none;
   margin-left: 8%;
   background-color: white;
-  width: 41%;
+  width: 50%;
 }
 }
 

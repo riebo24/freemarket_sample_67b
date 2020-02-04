@@ -134,9 +134,16 @@
         margin: 0 auto;
         text-align: center;
         padding: 10px 0;
+        display       : inline-block;
+        border-radius : 5%;          
+        font-size     : 18pt;       
+        text-align    : center;     
+        cursor        : pointer;     
+        padding       : 12px 12px;   
+        color         : #ffffff; 
+        line-height   : 1em;         
       }
     }
-    
   }
 
 
