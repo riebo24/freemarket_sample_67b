@@ -5,11 +5,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## Database authenticatable
       t.string :nickname,           null: false, unique: true, limit:15
-      t.string :password,           null: false
-      t.string :first_name,         null: false, limit:30
-      t.string :last_name,          null: false, limit:30
-      t.string :first_kane,         null: false, limit:30
-      t.string :last_kane,          null: false, limit:30
+      t.string :password,           null: false, length: { minimum: 7 }
+      VALID_NAME_REGEX = /\A[^ -~｡-ﾟ]+\z/
+      t.string :first_name,         null: false, limit:30, format: { with: VALID_NAME_REGEX} 
+      t.string :last_name,          null: false, limit:30, format: { with: VALID_NAME_REGEX} 
+      VALID_LETTER_REGEX = /\A[\p{hiragana} ー－&&[^ -~｡-ﾟ]]+\z/
+      t.string :first_kane,         null: false, limit:30, format: { with: VALID_LETTER_REGEX}
+      t.string :last_kane,          null: false, limit:30, format: { with: VALID_LETTER_REGEX}
       t.integer :post_number,      null: false
       t.string :prefecture,         null: false
       t.string :city,               null: false
@@ -20,7 +22,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.date :card, null: false
       t.string :profile	,           null: false
 
-      t.string :email,              null: false, default: ""
+      VALID_EMAIL_REGEX = /\A[a-zA-Z0-9_\#!$%&`'*+\-{|}~^\/=?\.]+@[a-zA-Z0-9][a-zA-Z0-9\.-]+\z/
+      t.string :email,              null: false, default: "", format: { with: VALID_EMAIL_REGEX}
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
