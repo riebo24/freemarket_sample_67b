@@ -23,18 +23,18 @@
     .details__top__itembox2
       product1
     .details__top__list
-    %table{:border => "1"}
+    %table{border:  "1"}
       %tr
         %th 出品
         %td hoge
       %tr
         %th カテゴリー
         %td
-          %a{:href => "#"} レディース
+          = link_to 'レディース'
           %br/
-          %a{:href => "#"} トップス
+          = link_to 'トップス'
           %br/
-          %a{:href => "#"} Tシャツ/カットソー(半袖/袖なし)
+          = link_to 'Tシャツ/カットソー(半袖/袖なし)'
       %tr
         %th ブランド
         %td 
@@ -50,7 +50,7 @@
       %tr
         %th 発送元の地域
         %td 
-          %a{:href => "#"} 青森県
+          = link_to '青森県' 
       %tr
         %th 発送日の目安
         %td 1-2日で発送
@@ -65,13 +65,13 @@
 
   .details__bottom
     .details__bottom__high
-      %textarea{:cols => "100", :rows => "8"} 
+      %textarea{cols:  "100", rows:  "8"} 
     .details__bottom__low
       %p.noticeMsg
       相手のことを考え丁寧なコメントを心がけましょう。
       %br/
       不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %form{:cols => "120",:row => "10"}
+      %form{cols:  "120",row:  "10"}
     .bottom
       コメントする
       
