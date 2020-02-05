@@ -1,0 +1,77 @@
+.details
+  .details__top
+    .details__top__title
+      product1
+
+    .details__top__middle
+      .details__top__middle__top
+
+      .details__top__middle__low
+
+        .details__top__middle__low__left
+        .details__top__middle__low__center
+        .details__top__middle__low__right
+
+    .details__top__span
+      ¥10000
+    .details__top__itembox
+      .details__top__itembox__left
+        (税込)
+      .details__top__itembox__right
+        送料込み
+
+    .details__top__itembox2
+      product1
+    .details__top__list
+    %table{:border => "1"}
+      %tr
+        %th 出品
+        %td hoge
+      %tr
+        %th カテゴリー
+        %td
+          %a{:href => "#"} レディース
+          %br/
+          %a{:href => "#"} トップス
+          %br/
+          %a{:href => "#"} Tシャツ/カットソー(半袖/袖なし)
+      %tr
+        %th ブランド
+        %td 
+      %tr
+        %th 商品のサイズ
+        %td 
+      %tr
+        %th 商品の状態
+        %td 新品/未使用
+      %tr
+        %th 配送料の負担
+        %td 送料込み（出品者負担）
+      %tr
+        %th 発送元の地域
+        %td 
+          %a{:href => "#"} 青森県
+      %tr
+        %th 発送日の目安
+        %td 1-2日で発送
+
+    .details__top__test
+      .details__top__test__text1
+        = link_to root_path do
+          ★ お気に入り ()
+      .details__top__test__text2
+        = link_to root_path do
+          🏴不適切な商品の通報
+
+  .details__bottom
+    .details__bottom__high
+      %textarea{:cols => "100", :rows => "8"} 
+    .details__bottom__low
+      %p.noticeMsg
+      相手のことを考え丁寧なコメントを心がけましょう。
+      %br/
+      不快な言葉遣いなどは利用制限や退会処分となることがあります。
+      %form{:cols => "120",:row => "10"}
+    .bottom
+      コメントする
+      
