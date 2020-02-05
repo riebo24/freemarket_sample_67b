@@ -1,10 +1,9 @@
 .login-field{
   max-width: none;
   width: 456px;
-  height: 100％;
   overflow: scroll;
   text-align: center;
-  margin: 0 auto;
+  margin: auto;
   background-color: white;
   padding: 5px 0;
 
@@ -25,7 +24,8 @@
   }
 }
 
-&__h2 {
+& h2 {
+  margin: 20px 0;
 }
 
 &__field {
@@ -83,7 +83,7 @@
   text-decoration: none;
   margin-left: 8%;
   background-color: white;
-  width: 41%;
+  width: 50%;
 }
 }
 

@@ -1,11 +1,12 @@
 .field-base {
   width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    background-color: white;
-    overflow: scroll;
+  margin: 0 auto;
+  padding: 15px 0;
+  text-align: center;
+  background-color: white;
+  overflow: scroll;
 }
-  .main { 
+  .main-user { 
     max-width: 343px;
     margin: 0 auto;
 
@@ -133,9 +134,16 @@
         margin: 0 auto;
         text-align: center;
         padding: 10px 0;
+        display       : inline-block;
+        border-radius : 5%;          
+        font-size     : 18pt;       
+        text-align    : center;     
+        cursor        : pointer;     
+        padding       : 12px 12px;   
+        color         : #ffffff; 
+        line-height   : 1em;         
       }
     }
-    
   }
 
 
