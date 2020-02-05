@@ -8,3 +8,11 @@
 @import "posts";
 @import "items";
 @import "page";
+
+*{
+  box-sizing: border-box;
+}
+
+.all_body{
+  background-color: #ececec;
+}
