@@ -3,7 +3,15 @@
 @import "devise/shared_footer.scss";
 @import "devise/shared_headder.scss";
 @import "devise/wrapper.scss";
-@import "devise/registrations-new.scss"
+@import "devise/registrations-new.scss";
 @import "reset";
 @import "posts";
+@import "items";
 
+*{
+  box-sizing: border-box;
+}
+
+.all_body{
+  background-color: #ececec;
+}
