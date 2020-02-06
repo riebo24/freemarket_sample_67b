@@ -44,13 +44,16 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 |seller_id|references|null: false, foreign_key: true|
 |name|string|null: false|
 |price|integer|null: false|
-|status|string|null: false|
-|cost|interger|null: false|
-|delivery|interger|null: false|
+|status|text|null: false|
+|cost|string|null: false|
+|delivery|string|null: false|
 |category_id|references|null: false, foreign_key: true|
 |size_id|references|null: false, foreign_key: true|
 |brand_id|references|foreign_key: true|
-|deal|boolean|null: false|
+|deal|boolean||
+|send_address|string|null: false|
+|send_date|string|null: false|
+|condition|string|null: false|
 ### Association
 - belongs_to :category
 - belongs_to :size
