@@ -18,6 +18,14 @@ private
   def item_params
     params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
   end
+  
+  def confirm
+    @confirm = Item.new
+  end
+
+  def buy
+  end
+    
 end
 
 # @items = Item.includes(:images).order('created_at DESC')

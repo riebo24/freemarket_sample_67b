@@ -1,0 +1,189 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+*{
+  text-decoration: none;
+}
+
+.details{
+  width: auto;
+  height: 1600px;
+  background-color: #f8f8f8;
+  padding: 40px;
+
+  &__top{
+    width: 620px;
+    height: 1150px;
+    background-color: #fff;
+    margin: 0 auto;
+    &__title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    }
+  
+
+
+    &__middle{
+      background-color: gray;
+      display: flex;
+      flex-direction: column;
+      width: 620px;
+      height: 443px;
+      align-items: center;
+      padding: 0 auto;
+
+      &__top{
+      width: 560px;
+      height: 346px;
+      margin: 0px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: red;
+      
+      }
+
+      &__low{
+        width: 500px;
+        height: 87px;
+        margin: 10px 0px 0px;
+        padding-left: 70px;
+        display: flex;
+        background-color: green;
+
+        &__left{
+          width: 140px;
+          height: 87px;
+          background-color: hotpink;
+        }
+        &__center{
+          width: 140px;
+          height: 87px;
+          background-color: khaki;
+        }
+        &__right{
+          width: 140px;
+          height: 87px;
+          background-color: lightblue;
+        }
+      }
+    }
+      
+    &__span{
+      width: 610px;
+      height: 53px;
+      font-size: 46px;
+      font-weight: bold;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    &__itembox{
+      width: 620px;
+      height: 24px;
+      font-size: 16px;
+      text-align: center;
+      background-color: #fff;
+      &__left{
+        padding-left: 250px;
+        float: left;
+        width: 47px;
+        height: 18px;
+        font-size: 16px;
+        background-color: #fff;
+      }
+      &__right{
+        float: left;
+        width: 64;
+        height: 18;
+        font-size: 16px;
+        background-color:#fff;
+      }
+    }
+      
+    &__itembox2{
+      background-color:#fff;
+      width: 620px;
+      height: 27px;
+      margin: 0px 0px 30px;
+      font-size: 18px;
+    }
+
+  }
+  &__bottom{
+    margin: 0 84px;
+    padding: 24px;
+    height: 250px;
+    background-color: #ffffff;
+    text-align: center;
+  }
+}
+  
+table {
+  border-collapse: collapse;
+  height: 400px;
+  width: 500px;
+}
+table th, table td {
+  border: solid 1px #f8f8f8;
+  
+}
+table th{
+  background-color: #eee;
+  width: 250px;
+  height: 50px;
+}
+
+table td{
+  background-color: #fff;
+  width: 330px;
+  height: 50px;
+}
+
+.details__top__test{
+  display: flex;
+  padding: 10px 20px;
+  margin: 10px auto;
+  font-size: 15px;
+  justify-content: space-between;
+  font-weight: bold;
+  display: flex;
+  
+  &__text1{
+    padding: 6px 10px;
+    border-radius: 40px;
+    border: 1px solid #ffb340; 
+  }
+  &__text2{
+    padding: 6px 10px;
+    color: #333;
+    border: 1px solid #333;
+  }
+ 
+}
+
+.details__top__test__text1 > a{
+  color: #33cccc;
+} 
+.details__top__test__text2 > a{
+  color: black;
+}
+
+.bottom{
+  width: 100%;
+  max-width: 340px;
+  padding: 15px 10px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 30px;
+  letter-spacing: 0.1em;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  background-color: #33cccc;
+  background-size: 200% auto;
+  
+}
+

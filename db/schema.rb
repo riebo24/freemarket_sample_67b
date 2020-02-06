@@ -57,6 +57,21 @@ ActiveRecord::Schema.define(version: 2020_02_05_065720) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", limit: 15, null: false
+    t.string "password", null: false
+    t.string "first_name", limit: 30, null: false
+    t.string "last_name", limit: 30, null: false
+    t.string "first_kane", limit: 30, null: false
+    t.string "last_kane", limit: 30, null: false
+    t.integer "post_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.string "phone_number"
+    t.date "birthday", null: false
+    t.date "card", null: false
+    t.string "profile", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
