@@ -1,95 +1,109 @@
+-# .wrapper
+-#   = render 'header'
+
+
+
 .main
   .main__sell
-    .main__sell__header
-      = image_tag "logo.png", size: "193x49"
-
-
-
-    .main__sell__content
-      .main__sell__content__item
-        .main__sell__content__item__top
-          %h1 商品の情報を入力
-        .main__sell__content__item__img
-          %h3 出品画像
+    = form_for @item do |f|
+      .main__sell__top
+        %h1 商品の情報を入力
+      .main__sell__img
+        %h3 出品画像
+        %span 必須
+        .main__sell__img__up
+          = f.fields_for :images do |i|
+            = i.file_field :image_name
+      .main__sell__name
+        商品名
+        %span 必須
+        = f.text_field :name, class: 'item-name', placeholder: '  商品名 (必須40文字まで)'
+        %br
+        商品の説明
+        %span 必須
+        = f.text_area :status, class: 'item-exposition', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
+      .main__sell__category
+        .main__sell__category__left
+          %h3  商品の詳細
+        .main__sell__category__right
+          .main__sell__category__right__content
+            .main__sell__category__right__content__item
+              %b カテゴリー
+            .main__sell__category__right__content__form
+              %span 必須
+              -# = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---"
+          .main__sell__category__right__content
+            .main__sell__category__right__content__item
+              %b サイズ
+            .main__sell__category__right__content__form
+              %span.gray 任意
+              -# = f.select :size_id, [ ["牧size",1], ["ハッシーsize", 2], ["mako_size", 3]], prompt: "---"
+          .main__sell__category__right__content
+            .main__sell__category__right__content__item
+              %b ブランド名
+            .main__sell__category__right__content__form
+              %span.gray 任意
+              -# = f.text_field :brand_id, class: 'item-name', placeholder: '  例）NoGuChi'
+          .main__sell__category__right__content
+            .main__sell__category__right__content__item
+              %b  商品の状態
+            .main__sell__category__right__content__form
+              %span 必須
+              = f.select :condition, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---"
+      .main__sell__delivery
+        .main__sell__delivery__left
+          %h3 配送について
+        .main__sell__delivery__rigft
+          .main__sell__delivery__rigft__content
+            .main__sell__delivery__rigft__content__item
+              %b 配送料の負担
+            .main__sell__delivery__rigft__content__form
+              %span 必須
+              = f.select :cost, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---"
+            .main__sell__delivery__rigft__content__item
+              %b 配送の方法
+            .main__sell__delivery__rigft__content__form
+              %span 必須
+              = f.select :delivery, [ ["ゆうパック",1], ["クリックぽすと", 2], ["クロネコヤマト", 3]], prompt: "---"
+            .main__sell__delivery__rigft__content__item
+              %b 発送元の地域
+            .main__sell__delivery__rigft__content__form
+              %span 必須
+              = f.select :send_address, [ ["北海道",1], ["青森県", 2], ["岩手県", 3], ["宮城県", 4], ["秋田県", 5], ["山形県", 6], ["福島県", 7], ["茨城県", 8], ["栃木県", 9], ["群馬県", 10], ["埼玉県", 11], ["千葉県", 12], ["東京都", 13], ["神奈川県", 14], ["新潟県", 15], ["富山県", 16], ["石川県", 17], ["福井県", 18], ["山梨県", 19], ["長野県", 20], ["岐阜県", 21], ["静岡県", 22], ["愛知県", 23], ["三重県", 24], ["滋賀県", 25], ["京都府", 26], ["大阪府", 27], ["京都府", 28], ["奈良県", 29], ["和歌山県", 30], ["鳥取県", 31], ["島根県", 32], ["岡山県", 33], ["広島県", 34], ["山口県", 35], ["徳島県", 36], ["香川県", 37], ["愛媛県", 38], ["高知県", 39], ["福岡県", 40], ["佐賀県", 41], ["長崎県", 42], ["熊本県", 43], ["大分県", 44], ["宮崎県", 45], ["鹿児島県", 46], ["沖縄県", 47], ["未定", 48] ], prompt: "---"
+            .main__sell__delivery__rigft__content__item
+              %b 発送まで日数
+            .main__sell__delivery__rigft__content__form
+              %span 必須
+              = f.select :send_date, [ ["１〜２日で発送",1], ["２〜３日で発送", 2], ["４〜７日で発送", 3] ], prompt: "---"
+      .main__sell__price
+        販売価格(300~9,999,999)
+        .main__sell__price__left
+          価格
           %span 必須
-          .main__sell__content__item__img__up
-            = form_for "@item" do |f|
-              = f.file_field :content, class: 'item-image', placeholder: '  最大1枚までアップロードできます'
-        .main__sell__content__item__name
-          商品名
-          %span 必須
-          = form_for "@item" do |f|
-            = f.text_field :content, class: 'item-name', placeholder: '  商品名 (必須40文字まで)'
+        .main__sell__price__right
+          ¥
+          = f.number_field :price, class: 'item-price', placeholder: '  例）300'
+      .main__sell__input
+        .main__sell__input__top
+          %P
+          = link_to "禁止されている出品",'#'
+          、
+          = link_to "行為",'#'
+          を必ずご確認ください。
           %br
-          商品の説明
-          %span 必須
-          = form_for "@item" do |f|
-            = f.text_area :content, class: 'item-exposition', placeholder: '商品名 （商品の説明(必須1,000文字以内）（色、素材、重さ、定価、注意点など）例）   2010年頃に1万円に購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。）'
-        .main__sell__content__item__category
-          .main__sell__content__item__category__left
-            %h3  商品の詳細
-          .main__sell__content__item__category__right
-            %b カテゴリー
-            %span 必須
-            = form_for '@item' do |f|
-              = f.select :choice, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---"
-            %b  商品の状態
-            %span 必須
-            = form_for '@item' do |f|
-              = f.select :choice, [ ["新品、未使用",1], ["未使用に近い", 2], ["目立った傷や汚れなし", 3], ["やや傷や汚れなし", 4], ["傷や汚れなし", 5], ["傷や汚れあり", 6], ["全体的に状態が悪い", 7] ], prompt: "---"
-        .main__sell__content__item__delivery
-          .main__sell__content__item__delivery__left
-            %h3 配送について
-          .main__sell__content__item__delivery__rigft
-            %b 配送料の負担
-            %span 必須
-            = form_for '@item' do |f|
-              = f.select :choice, [ ["送料込み(出品者負担)",1], ["着払い(購入者負担)", 2] ], prompt: "---"
-            %b 発送元の地域
-            %span 必須
-            = form_for '@item' do |f|
-              = f.select :choice, [ ["北海道",1], ["青森県", 2], ["岩手県", 3], ["宮城県", 4], ["秋田県", 5], ["山形県", 6], ["福島県", 7], ["茨城県", 8], ["栃木県", 9], ["群馬県", 10], ["埼玉県", 11], ["千葉県", 12], ["東京都", 13], ["神奈川県", 14], ["新潟県", 15], ["富山県", 16], ["石川県", 17], ["福井県", 18], ["山梨県", 19], ["長野県", 20], ["岐阜県", 21], ["静岡県", 22], ["愛知県", 23], ["三重県", 24], ["滋賀県", 25], ["京都府", 26], ["大阪府", 27], ["京都府", 28], ["奈良県", 29], ["和歌山県", 30], ["鳥取県", 31], ["島根県", 32], ["岡山県", 33], ["広島県", 34], ["山口県", 35], ["徳島県", 36], ["香川県", 37], ["愛媛県", 38], ["高知県", 39], ["福岡県", 40], ["佐賀県", 41], ["長崎県", 42], ["熊本県", 43], ["大分県", 44], ["宮崎県", 45], ["鹿児島県", 46], ["沖縄県", 47], ["未定", 48] ], prompt: "---"
-            %b 発送までの日数
-            %span 必須
-            = form_for '@item' do |f|
-              = f.select :choice, [ ["１〜２日で発送",1], ["２〜３日で発送", 2], ["４〜７日で発送", 3] ], prompt: "---"
-        .main__sell__content__item__price
-          販売価格(300~9,999,999)
-          .main__sell__content__item__price__left
-            価格
-            %span 必須
-          .main__sell__content__item__price__right
-            ¥
-            = form_for "@item" do |f|
-              = f.number_field :content, class: 'item-price', placeholder: '  例）300'
-        .main__sell__content__item__input
-          .main__sell__content__item__input__top
-            %P
-            = link_to "禁止されている出品",'#'
-            、
-            = link_to "行為",'#'
-            を必ずご確認ください。
-            %br
-            またブランド品でシリアルナンバー等がある場合はご記載ください。
-            = link_to "偽ブランドの販売",'#'
-            は犯罪であり処罰される可能性があります。
-            %br
-            また、出品をもちまして
-            = link_to "加盟店規約",'#'
-            に同意したことになります。
-          .main__sell__content__item__input__middle
-            = form_for '@item' do |f|
-              = f.submit '出品する', class: 'sell-item'
-          .main__sell__content__item__input__bottom
-            = link_to 'もどる', '#'
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to "偽ブランドの販売",'#'
+          は犯罪であり処罰される可能性があります。
+          %br
+          また、出品をもちまして
+          = link_to "加盟店規約",'#'
+          に同意したことになります。
+        .main__sell__input__middle
+          = f.submit '出品する', class: 'sell-item'
+        .main__sell__input__bottom
+          = link_to 'もどる', '#'
 
 
 
-    .main__sell__footer
-      .main__sell__footer__link
-        = link_to "プライバシーポリシー",'#'
-        = link_to "メルカリ利用規約",'#'
-        = link_to "特定商取引に関する表記",'#'
-      .main__sell__footer__logo
-        = image_tag "logo-white.png", size: "193x49"
-      %small © FURIMA, Inc.
+-# .wrapper
+-#   = render 'footer'

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
 
   resources :comments
-  resources :items, only: :new
+  resources :items, only: [:index, :new, :create]
   resources :images
   resources :brands
 
