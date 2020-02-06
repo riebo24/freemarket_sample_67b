@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   root to: 'posts#index'
-  resources :items,only:[:index, :new, :create, :confirm, :buy] do
+  resources :items,only:[:index, :new, :create, :confirm, :buy, :show] do
     collection do 
       get 'confirm'
       get 'buy'
