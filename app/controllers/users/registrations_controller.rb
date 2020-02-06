@@ -2,18 +2,18 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-
   def new
    @user = User.new 
   end
 
   def create
    @user = User.create(configure_permitted_parameters)
-   if current_user.create(configure_permitted_parameters)
-        redirect_to root_path
-      else
-        render :new
-      end
+
+    if @user.save
+      redirect_to my_page_path
+    else
+      render :new
+    end
 
   end
 
@@ -24,9 +24,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :password, :first_name,:last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :password, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email])
   end
-
 
   def after_sign_up_path_for(resource)
     my_page_path

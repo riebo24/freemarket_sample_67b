@@ -2,6 +2,24 @@
 
 class Users::SessionsController < Devise::SessionsController
 
+  def new
+  end
+
+  def create
+    user = User.find_by(email: params[:session][:email].downcase)
+    if user && user.authenticate(params[:session][:password])
+     redirect_to my_page_path, notice: 'ログインに成功しました'
+
+    else 
+     flash.now[:alert] = 'メールアドレスとパスワードの組み合わせが一致しません'
+     render :new
+    end
+  end
+
+  def destroy
+    redirect_to root_path
+  end
+
   protected
  
   def after_sign_in_path_for(resource)
