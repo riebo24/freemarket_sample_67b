@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_084144) do
+ActiveRecord::Schema.define(version: 2020_02_05_065720) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,21 +39,39 @@ ActiveRecord::Schema.define(version: 2020_01_31_084144) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
-    t.string "status", null: false
-    t.integer "cost", null: false
-    t.integer "delivery", null: false
+    t.text "status", null: false
+    t.string "cost", null: false
+    t.string "delivery", null: false
     t.bigint "brand_id"
-    t.boolean "deal", null: false
+    t.boolean "deal"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "seller_id"
     t.bigint "buyer_id"
+    t.string "send_address", null: false
+    t.string "send_date", null: false
+    t.string "condition", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", limit: 15, null: false
+    t.string "password", null: false
+    t.string "first_name", limit: 30, null: false
+    t.string "last_name", limit: 30, null: false
+    t.string "first_kane", limit: 30, null: false
+    t.string "last_kane", limit: 30, null: false
+    t.integer "post_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "house_number", null: false
+    t.string "building_name"
+    t.string "phone_number"
+    t.date "birthday", null: false
+    t.date "card", null: false
+    t.string "profile", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

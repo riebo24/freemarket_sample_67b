@@ -1,10 +1,11 @@
 class Item < ApplicationRecord
-  belongs_to :buyer
-  belongs_to :seller
-  belongs_to :category
-  belongs_to :size
-  belongs_to :brand
-  has_many :images 
+  belongs_to :buyer, optional: true
+  belongs_to :seller, optional: true
+  belongs_to :category, optional: true
+  belongs_to :size, optional: true
+  belongs_to :brand, optional: true
+  has_many   :images
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   validates :deal, inclusion: { in: [true, false] }
 

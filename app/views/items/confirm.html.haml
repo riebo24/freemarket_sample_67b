@@ -1,0 +1,59 @@
+.confirmation
+  =render 'header'
+  .confirmation__main
+    = form_for @confirm do |f|
+      .confirmation__main__header
+        購入内容の確認
+      .confirmation__main__item
+        =image_tag "82501127.jpeg", class: "confirmation__main__item__image"
+        .confirmation__main__item__text
+          .confirmation__main__item__text__info
+            商品名 
+            ¥500(税込)
+            送料込み
+      .confirmation__main__buy
+        .confirmation__main__buy__header
+          .confirmation__main__buy__header__box
+            .confirmation__main__buy__header__box__text
+              支払い金額
+            .confirmation__main__buy__header__box__price
+              ¥500        
+          .confirmation__main__buy__header__point
+            ここにポイントの表示が必要かも
+        .confirmation__main__buy__way
+          .confirmation__main__buy__way__box
+            .confirmation__main__buy__way__content.bold
+              支払い方法
+            .confirmation__main__buy__way__content
+              クレジットカード
+              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_0e17fba3d10886b3eddc8c95"></script>
+              %br
+              ************9110
+              %br
+              有効期限 11 / 24
+          .confirmation__main__buy__way__content
+            = link_to "変更する", "#", class:"change"
+        .confirmation__main__buy__place
+          .confirmation__main__buy__place__box
+            .confirmation__main__buy__place__content.bold
+              配送先
+            .confirmation__main__buy__place__content
+              〒000-0000
+              %br
+              大阪府吹田市江坂町0-0-0
+              %br
+              名前
+          .confirmation__main__buy__place__content.change
+            = link_to "変更する", "#", class:"change"
+      = f.submit "購入する", class:"confirmation__main__submit-btn"
+
+  = render 'footer'
+
+
+  
+      
+
+
+
+
+          

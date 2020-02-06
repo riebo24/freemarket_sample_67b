@@ -1,10 +1,17 @@
 Rails.application.routes.draw do
+  
   devise_for :users
-  root to: 'items#index'
-
+  root to: 'posts#index'
+  resources :items,only:[:index, :new, :create, :confirm, :buy] do
+    collection do 
+      get 'confirm'
+      get 'buy'
+    end
+  end
+  # 商品が登録できるようになったらcollectionをmemberに変更
 
   resources :comments
-  resources :items, only: :new
+
   resources :images
   resources :brands
 
