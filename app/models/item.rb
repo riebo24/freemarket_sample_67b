@@ -7,4 +7,8 @@ class Item < ApplicationRecord
   has_many :images 
 
   validates :deal, inclusion: { in: [true, false] }
+
+  hhh
 end
+
+
