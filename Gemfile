@@ -87,3 +87,5 @@ gem 'ancestry'
 
 gem 'jquery-rails'
 
+gem 'payjp'
+
