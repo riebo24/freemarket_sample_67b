@@ -8,4 +8,8 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :images, allow_destroy: true
 
   validates :deal, inclusion: { in: [true, false] }
+
+  hhh
 end
+
+
