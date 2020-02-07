@@ -9,7 +9,6 @@ class Item < ApplicationRecord
 
   validates :deal, inclusion: { in: [true, false] }
 
-  hhh
 end
 
 
