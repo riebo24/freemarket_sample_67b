@@ -10,7 +10,7 @@ class User < ApplicationRecord
   VALID_NAME_REGEX = /\A[^ -~｡-ﾟ]/
   validates :first_name, presence: true, format: { with: VALID_NAME_REGEX }
   validates :last_name, presence: true, format: { with: VALID_NAME_REGEX }
-  validates :password, presence: true, length: { minimum: 7 }
+  # validates :password, presence: true, length: { minimum: 7 }
   VALID_LETTER_REGEX = /\A[\p{katakana}} --&&[^ -~｡-ﾟ]]+\z/
   validates :first_kane, presence: true, format: { with: VALID_LETTER_REGEX }
   validates :last_kane, presence: true, format: { with: VALID_LETTER_REGEX }

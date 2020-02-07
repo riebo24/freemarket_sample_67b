@@ -30,15 +30,15 @@
             = f.label :password, "パスワード", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.password_field :password, autocomplete: "password", placeholder: '７文字以上のパスワード', class: 'main-user__fields__element__text'
+          = f.password_field :password, autocomplete: "off", placeholder: '７文字以上のパスワード', class: 'main-user__fields__element__text'
 
       .main-user__fields
         .main-user__fields__element
           .main-user__fields__element__title
-            = f.label :password, "パスワード(確認用)", class: 'main-user__fields__element__title__label'
+            = f.label :password_confirmation, "パスワード(確認用)", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.password_field :password, autocomplete: "password", placeholder: 'パスワード（確認用）', class: 'main-user__fields__element__text'
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワード（確認用）', class: 'main-user__fields__element__text'
 
       .main-user__field
         %h3 本人確認

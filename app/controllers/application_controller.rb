@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :password, :first_name,:last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email])
+    devise_parameter_sanitizer.permit(:sign_up, 
+      keys: [:nickname, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile])
+    
   end
 
   def production?
@@ -20,3 +22,4 @@ class ApplicationController < ActionController::Base
     end
   end
 end
+

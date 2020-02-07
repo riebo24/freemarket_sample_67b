@@ -7,16 +7,18 @@ class Users::SessionsController < Devise::SessionsController
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-     redirect_to my_page_path, notice: 'ログインに成功しました'
-
+    if user && user.authenticatable_salt(params[:session][:password])
+     redirect_to my_page_path
+    #  , notice: 'ログインに成功しました'
     else 
-     flash.now[:alert] = 'メールアドレスとパスワードの組み合わせが一致しません'
+    #  flash.now[:alert] = 'メールアドレスとパスワードの組み合わせが一致しません'
      render :new
     end
   end
 
   def destroy
+    @user = User.find(current_user.id) # current_userにする
+    @user.destroy
     redirect_to root_path
   end
 
