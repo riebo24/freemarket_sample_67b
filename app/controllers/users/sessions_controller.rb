@@ -6,8 +6,9 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    user = User.find_by(email: params[:session][:email].downcase)
-    if user && user.authenticatable_salt(params[:session][:password])
+    @user = User.find_by(sign_in_params)
+    if @user.present?
+      bypass_sign_in(@user)
      redirect_to my_page_path
     #  , notice: 'ログインに成功しました'
     else 
@@ -23,6 +24,11 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   protected
+
+  def sign_in_params
+    params.require(:user).permit(:email, :password, :encrypted_password)
+  end
+
  
   def after_sign_in_path_for(resource)
     my_page_path

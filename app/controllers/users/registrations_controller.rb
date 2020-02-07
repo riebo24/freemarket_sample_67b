@@ -7,11 +7,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-
    @user = User.new(user_params)
     if @user.save
-      # redirect_to my_page_path
-      redirect_to root_path
+      bypass_sign_in(@user)
+      # user-loginの状態にする 
+      redirect_to my_page_path
+      # redirect_to root_path
     else
       render :new
     end
