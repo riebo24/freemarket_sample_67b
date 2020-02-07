@@ -1,11 +1,9 @@
 .confirmation
-  = form_for @confirm do |f|
-    .confirmation__logo
-      = image_tag 'logo.png', size: '193x49'
-    .confirmation__main
+  =render 'header'
+  .confirmation__main
+    = form_for @confirm do |f|
       .confirmation__main__header
         購入内容の確認
-
       .confirmation__main__item
         =image_tag "82501127.jpeg", class: "confirmation__main__item__image"
         .confirmation__main__item__text

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_06_040953) do
+ActiveRecord::Schema.define(version: 2020_02_06_072050) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -55,14 +55,39 @@ ActiveRecord::Schema.define(version: 2020_02_06_040953) do
     t.datetime "updated_at", null: false
     t.bigint "seller_id"
     t.bigint "buyer_id"
+    t.string "send_address", null: false
+    t.string "send_date", null: false
+    t.string "condition", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
   end
 
+  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "images", null: false
+    t.string "title", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
+    t.string "nickname"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "first_kane"
+    t.string "last_kane"
+    t.integer "post_number"
+    t.string "prefecture"
+    t.string "city"
+    t.string "house_number"
+    t.string "building_name"
+    t.string "phone_number"
+    t.date "birthday"
+    t.integer "card"
+    t.string "profile"
+    t.string "email"
+    t.string "encrypted_password"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

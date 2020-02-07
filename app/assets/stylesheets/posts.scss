@@ -22,31 +22,33 @@
     }
   }
   &__main {
-    background-image: url("bg-mainVisual-pict_pc.jpg");
-    height: 600px;
-    width: auto;
-    background-size: cover;
-    padding: 0 60px;
-    display: flex;
+    position: relative;
+
     &__content{
-      margin-top: 220px;
+      position: absolute; 
+      top:200px;
+      left:40px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      color: #fff;
-      line-height: 1.77778;
-      &__text{
       font-size: 60px;
       line-height: 1.2;
-      
-      }
-      &__text2{
-        font-size: 18px;
-        margin-top: 10px;
-      }
+      color: #fff;
+     
+    }
+    &__text{
+      position: absolute; 
+      top:270px;
+      left:40px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.77778;
+      margin: 16px 0 0 0;
+    
     }
   }
   
   &__introduction{
-    height: 550px;
+    height: 520px;
     padding: 60px 20px 60px 20px;
     
     &__title{
@@ -144,25 +146,28 @@
 
   
   &__image{
-    background-image: url("bg-topMiddleDl-pict.jpg");
-    height: 300px;
-    width: auto;
-    background-size: cover;
-    color: #FFF;
-    padding: 100px 120px 0 120px;
-    
-    &__text1{
+    position: relative;
+        
+    &__text2{
+      position: absolute; 
+      top:100px;
+      left:90px;
       font-size: 27px;
       font-weight: bold;
       line-height: 1.4;
-      padding: 0 0 0 20px;
+      color: white;
+
     }
-    &__text2{
+    &__text3{
+      position: absolute; 
+      top:140px;
+      left:90px;
       font-size: 18px;
       margin: 20px 0 30px;
       line-height: 1.5;
-      padding: 0 0 0 20px;
+      color: white;
     }
+    
   }
 
   &__fulima{
@@ -325,24 +330,24 @@
     
   }
   &__download{
-    background-image: url("bg-appBanner-pict.jpg");
-    height: 180px;
-    width: auto;
-    background-size: cover;
-    padding: 100px 40px;
+    position: relative;
     &__letter{
-      color: #fff;
-      text-align:center;
+      position: absolute;
+      top: 100px;
+      left: 350px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      font-size: 24px;
       font-weight: bold;
       line-height: 1.4;
+      color: white;
+    }
+    &__letter1{
+      position: absolute;
+      top: 150px;
+      left: 400px;
+      font-size: 35px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
-      
-      &__life{
-        font-size: 24px;
-      }
-      &__nau{
-        font-size: 35px;
-      }
+      color: white;
     }
   }
   &__footer{                                
@@ -441,7 +446,7 @@
   width: 120px;
   height: 120px;
   background-color: #3cc1ce;
-  
+  z-index: 1;
 }
 
 .top-text{
