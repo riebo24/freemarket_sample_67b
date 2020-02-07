@@ -109,49 +109,49 @@
     
 
   .top__category
-    - @items.each do |item|
-      .top__category__title
-        ピックアップカテゴリー
-      .top__category__title2
-        = link_to "新規投稿機能"
-      .top__category__image
-        .top__category__image__left
-         
-          = link_to root_path do
-            .top__category__image__left__txst1
-              = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
-              
-              .top__category__image__left__txst1__test1
-                = item.name
-                .top__category__image__left__txst1__test1__center1
-                  = item.price
-                  .top__category__image__left__txst1__test1__center1__hosi
-                    ★0
-                .top__category__image__left__txst1__test1__center11
-                （税込）
+   
+    .top__category__title
+      ピックアップカテゴリー
+    .top__category__title2
+      = link_to "新規投稿機能"
+    .top__category__image
+      .top__category__image__left
+      - @items.each do |item|
+        = link_to root_path do
+          .top__category__image__left__txst1
+            = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
+            
+            .top__category__image__left__txst1__test1
+              = item.name
+              .top__category__image__left__txst1__test1__center1
+                = item.price
+                .top__category__image__left__txst1__test1__center1__hosi
+                  ★0
+              .top__category__image__left__txst1__test1__center11
+              （税込）
       
        
 
   .top__category
-    - @items.each do |item|
-      .top__category__title
-        ピックアップカテゴリー
-      .top__category__title2
-        = link_to "新規投稿機能"
-      .top__category__image
-        .top__category__image__left
-          = link_to root_path do
-            .top__category__image__left__txst1
-              = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
-              
-              .top__category__image__left__txst1__test1
-                = item.name
-                .top__category__image__left__txst1__test1__center1
-                  = item.price
-                  .top__category__image__left__txst1__test1__center1__hosi
-                    ★0
-                .top__category__image__left__txst1__test1__center11
-                （税込）
+    .top__category__title
+      ピックアップカテゴリー
+    .top__category__title2
+      = link_to "新規投稿機能"
+    .top__category__image
+      .top__category__image__left
+      - @items.each do |item|
+        = link_to root_path do
+          .top__category__image__left__txst1
+            = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
+            
+            .top__category__image__left__txst1__test1
+              = item.name
+              .top__category__image__left__txst1__test1__center1
+                = item.price
+                .top__category__image__left__txst1__test1__center1__hosi
+                  ★0
+              .top__category__image__left__txst1__test1__center11
+              （税込）
      
 
   .top__download
