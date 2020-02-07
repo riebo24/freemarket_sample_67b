@@ -2,16 +2,17 @@
 .wrapper
   = render 'shared/header'
   .top__main
+    = image_tag 'bg-mainVisual-pict_pc.jpg' , height: '550px' , width: '100%' , class: 'image'
     .top__main__content
-      .top__main__content__text
-        人生を変えるフリマアプリ
-      .top__main__content__text2
-        FURIMAはだれでもかんたんに出品・購入できる
-        .dr
-        フリマアプリです
-      = image_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
-      = image_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
-
+      人生を変えるフリマアプリ
+    .top__main__text
+      FURIMAはだれでもかんたんに出品・購入できる
+      .dr
+      フリマアプリです
+      .top__main__apple
+        = image_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
+        = image_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
+      
   .top__introduction
     .top__introduction__title
       FURIMAが選ばれる3つの理由
@@ -54,17 +55,20 @@
 
   .top__image
     .top__image__text1
-      会員数日本一位
+    = image_tag 'bg-topMiddleDl-pict.jpg' , height: '370px' , width: '100%' , class: 'image'
     .top__image__text2
+      会員数日本一位
+    .top__image__text3
       FURIMAは、フリマアプリで最も人気。
-      .box
-        出品・購入回数も業界最多です！
-      .box
-        ほしかったあの商品に出会えるかもしれません。
-    .top__image__apple
-      = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
-      = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
+      .dr
+      出品・購入回数も業界最多です！
+      .dr
+      ほしかったあの商品に出会えるかもしれません。
+      .top__image__text4
+        = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
+        = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
 
+     
     
 
   .top__fulima
@@ -151,14 +155,15 @@
      
 
   .top__download
+    = image_tag 'bg-appBanner-pict.jpg' , height: '350px' , width: '100%' , class: 'image'
     .top__download__letter
-      .top__download__letter__life
-        だれでもかんたん、人生を変えるフリマアプリ
-      .top__download__letter__nau
-        今すぐ無料ダウンロード！
-      .top__download__letter__apple
+      だれでもかんたん、人生を変えるフリマアプリ
+    .top__download__letter1
+      今すぐ無料ダウンロード！
+      .top__downlad___letter2
         = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
         = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
+    
   .wrapper
     = render 'shared/footer'
 
