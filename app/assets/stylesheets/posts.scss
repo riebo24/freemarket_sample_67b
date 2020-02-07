@@ -269,11 +269,13 @@
         
      
         &__txst1{
+          position: relative;
           *{
             color: black;
           }
         
           &__test1{
+            
             height: 70px;
             width: 200px;
             padding: 10px;
@@ -485,3 +487,25 @@
   margin-bottom: 12px;
 }
 
+.items-box_photo__sold{
+  width: 0;
+  height: 0;
+  border-top: 50px solid #ea352d ;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid #ea352d ;
+  z-index:100;
+  position: relative;
+  top:-320px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  &__inner{
+    transform: rotate(-45deg);
+    font-size: 20px;
+    margin:-35px 0px 0px -55px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+}
