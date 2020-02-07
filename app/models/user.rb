@@ -20,7 +20,7 @@ class User < ApplicationRecord
   validates :house_number, presence: true
   validates :birthday, presence: true
   validates :profile, presence: true
-
+  
   has_many :comments
   has_many :items
 end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   # , controllers: {
   #  registrations: 'users/registrations',
@@ -10,10 +11,20 @@ Rails.application.routes.draw do
     get 'my_page' => 'users/registrations#my_page'
   end
 
+  root to: 'items#index'
+  resources :items,only:[:index, :new, :create, :confirm, :buy] do
+
+    collection do 
+      get 'confirm'
+      get 'buy'
+    end
+  end
+  # 商品が登録できるようになったらcollectionをmemberに変更
+
   root to: 'posts#index'
   
   resources :comments
-  resources :items, only: :new
+
   resources :images
   resources :brands
   resources :users, only: :show
