@@ -18,11 +18,6 @@ class ItemsController < ApplicationController
     end
   end
 
-private
-  def item_params
-    params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
-  end
-  
   def confirm
     @confirm = Item.new
 
@@ -32,7 +27,12 @@ private
     @item = Item.find(params[:id])
   end
 
-    
+
+private
+  def item_params
+    params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
+  end
+      
 end
 
 # @items = Item.includes(:images).order('created_at DESC')
