@@ -19,9 +19,6 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
-  # 商品が登録できるようになったらcollectionをmemberに変更
-
-  root to: 'posts#index'
   
   resources :comments
 
