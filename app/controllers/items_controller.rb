@@ -19,10 +19,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
-    redirect_to root_path
+    @item = Item.find_by(id:params[:id])
+    if @item.seller_id == @current_user.id
+      @item.destroy
+      redirect_to root_path
+    else
+      render :index
   end
-
 
   def confirm
     @confirm = Item.new
