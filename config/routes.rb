@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
   root to: 'posts#index'
   resources :items,only:[:index, :new, :create, :confirm, :buy] do
-    collection do 
+    collection do
       get 'confirm'
       get 'buy'
     end
