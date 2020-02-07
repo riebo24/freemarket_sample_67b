@@ -2,37 +2,36 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
 
-
   def new
    @user = User.new 
   end
 
   def create
-   @user = User.create(user_paramas)
-   if current_user.create(user_params)
-        # redirect_to root_path(user登録のshow actionを行うようにする)
-      else
-        render :new
-      end
+   @user = User.new(user_params)
+    if @user.save
+      bypass_sign_in(@user)
+      # user-loginの状態にする 
+      redirect_to my_page_path
+      # redirect_to root_path
+    else
+      render :new
+    end
 
   end
 
-  # def edit
-  # end
+  def my_page
+  end
 
-  # def update
-  #   if current_user.update(user_params)
-  #     redirect_to root_path
-  #   else
-  #     render :edit
-  #   end
-  # end
 
   private
 
-  def user_paramas
-    params.require(:user).permit(:nickname, :password, :first_name,:last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email)
+  def user_params
     
+    params.require(:user).permit(:email, :password, :nickname, :encrypted_password, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email)
+  end
+
+  def after_sign_up_path_for(user_params)
+    my_page_path
   end
 
 
