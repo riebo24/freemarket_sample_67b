@@ -1,5 +1,9 @@
 class ItemsController < ApplicationController
 
+  def index
+    @items = Item.all.limit(3)
+  end
+
   def new
     @item = Item.new
     @item.images.new
@@ -27,6 +31,9 @@ class ItemsController < ApplicationController
   def buy
   end
 
+  def show
+    @item = Item.find(params[:id])
+  end
 
 private
   def item_params
@@ -36,7 +43,7 @@ private
   def set_item
     @item = Item.find(params[:id])
   end
-  
+
 end
 
 # @items = Item.includes(:images).order('created_at DESC')
