@@ -9,13 +9,13 @@
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = render "devise/shared/error_messages", resource: resource
     
-      .main-user__fields
-        .main__fields__element
-          .main-user__fields__element__title
-            = f.label :nickname, "ニックネーム", class: 'main-user__fields__element__title__label'
-            .main-user__fields__element__title__notice
-              必須
-          = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎', class: 'main-user__fields__element__text'
+      -# .main-user__fields
+      -#   .main__fields__element
+      -#     .main-user__fields__element__title
+      -#       = f.label :nickname, "ニックネーム", class: 'main-user__fields__element__title__label'
+      -#       .main-user__fields__element__title__notice
+      -#         必須
+      -#     = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎', class: 'main-user__fields__element__text'
       .main-user__fields
         .main-user__fields__element
           .main-user__fields__element__title
