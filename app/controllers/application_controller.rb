@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile])
     # devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :passwaord])
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
+    # devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
 
   def production?
