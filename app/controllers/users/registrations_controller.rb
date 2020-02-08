@@ -1,38 +1,38 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+# class Users::RegistrationsController < Devise::RegistrationsController
 
-  def new
-   @user = User.new 
-  end
+#   def new
+#    @user = User.new 
+#   end
 
-  def create
-   @user = User.new(user_params)
-    if @user.save
-      bypass_sign_in(@user)
-      # user-loginの状態にする 
-      redirect_to my_page_path
-      # redirect_to root_path
-    else
-      render :new
-    end
+#   def create
+#    @user = User.new(user_params)
+#     if @user.save
+#       bypass_sign_in(@user)
+#       # user-loginの状態にする 
+#       redirect_to my_page_path
+#       # redirect_to root_path
+#     else
+#       render :new
+#     end
 
-  end
+#   end
 
-  def my_page
-  end
+#   def my_page
+#   end
 
 
-  private
+#   private
 
-  def user_params
+#   def user_params
     
-    params.require(:user).permit(:email, :password, :nickname, :encrypted_password, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email)
-  end
+#     params.require(:user).permit(:email, :password, :nickname, :encrypted_password, :first_name, :last_name, :first_kane, :last_kane, :post_number, :prefecture, :city, :house_number, :building_name, :phone_number, :birthday, :card, :profile, :email)
+#   end
 
-  def after_sign_up_path_for(user_params)
-    my_page_path
-  end
+#   def after_sign_up_path_for(user_params)
+#     my_page_path
+#   end
 
 
   # before_action :configure_sign_up_params, only: [:create]
