@@ -14,11 +14,6 @@ class ApplicationController < ActionController::Base
     # devise_parameter_sanitizer.permit(:sign_in, keys: [:email])
   end
 
-  # def configure_permitted_parameters
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname])
-  # end
- 
-
   def production?
     Rails.env.production?
   end
