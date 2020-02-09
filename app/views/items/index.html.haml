@@ -12,7 +12,7 @@
       .top__main__apple
         = image_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
         = image_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
-      
+
   .top__introduction
     .top__introduction__title
       FURIMAが選ばれる3つの理由
@@ -23,35 +23,33 @@
           .dr
           1
         .top__introduction__main__left__text1
-          %span 3分 
+          %span 3分
           ですぐに出品
         .dr
           スマホで入力するだけで簡単に出品できる！
 
 
-        
-            
+
       .top__introduction__main__center
         = image_tag "pict-reason-02.jpg", class: "image2" , height: "300px" , width: "300px"
         .top__introduction__main__center__box2
           2
         .top__introduction__main__center__text2
-          %span シンプル 
+          %span シンプル
           で使いやすい
         .dr
           めんどくさい入力は必要なく、検索も購入もスムーズ！
-        
-       
+
       .top__introduction__main__right
         = image_tag "pict-reason-03.jpg", class: "image3" , height: "300px" , width: "300px"
         .top__introduction__main__right__box3
           3
         .top__introduction__main__right__text3
           手数料
-          %span 業界最安  
+          %span 業界最安
         .dr
           最大3%でお得に出品&購入！
-            
+
 
   .top__image
     .top__image__text1
@@ -68,8 +66,6 @@
         = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
         = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
 
-     
-    
 
   .top__fulima
     .top__fulima__title
@@ -84,7 +80,7 @@
           スマホひとつで、いつでもどこでも簡単に
           .dr
           出品・購入が可能！
-        
+
       .top__fulima__main__center
         .top__fulima__main__center__icon2
           = image_tag "icon-03.png", class: "image100" , height: "340px" , width: "220px"
@@ -105,11 +101,10 @@
           く、ポイントや売上金など多彩な方法が
         .dr
           あります。
-       
-    
+
 
   .top__category
-   
+
     .top__category__title
       ピックアップカテゴリー
     .top__category__title2
@@ -120,7 +115,7 @@
         = link_to root_path do
           .top__category__image__left__txst1
             = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
-            
+
             .top__category__image__left__txst1__test1
               = item.name
               .top__category__image__left__txst1__test1__center1
@@ -129,8 +124,7 @@
                   ★0
               .top__category__image__left__txst1__test1__center11
               （税込）
-      
-       
+
 
   .top__category
     .top__category__title
@@ -143,7 +137,7 @@
         = link_to root_path do
           .top__category__image__left__txst1
             = image_submit_tag item.images[0][:image_name], class: "image10" , height: "150px" , width: "220px"
-            
+
             .top__category__image__left__txst1__test1
               = item.name
               .top__category__image__left__txst1__test1__center1
@@ -152,7 +146,7 @@
                   ★0
               .top__category__image__left__txst1__test1__center11
               （税込）
-     
+
 
   .top__download
     = image_tag 'bg-appBanner-pict.jpg' , height: '350px' , width: '100%' , class: 'image'
@@ -163,7 +157,7 @@
       .top__downlad___letter2
         = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
         = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
-    
+
   .wrapper
     = render 'shared/footer'
 

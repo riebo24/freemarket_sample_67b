@@ -11,18 +11,22 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path
     else
       render :new
     end
   end
 
-private
-  def item_params
-    params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
+  def destroy
+    @item = Item.find_by(id:params[:id])
+    if @item.seller_id == @current_user.id && @item.destroy
+      redirect_to root_path
+    else
+      render :index
+    end
   end
-  
+
   def confirm
     @confirm = Item.new
   end
@@ -34,7 +38,15 @@ private
     @item = Item.find(params[:id])
   end
 
-    
+private
+  def item_params
+    params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
 end
 
 # @items = Item.includes(:images).order('created_at DESC')
