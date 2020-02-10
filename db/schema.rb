@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_02_06_072050) do
     t.integer "cost", null: false
     t.integer "delivery", null: false
     t.bigint "brand_id"
-    t.boolean "deal", null: false
+    t.boolean "deal", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "seller_id"
