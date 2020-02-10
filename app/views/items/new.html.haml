@@ -42,13 +42,13 @@
                 %b カテゴリー
               .main__sell__category__right__content__form
                 %span 必須
-                -# = f.select :category_id, [ ["レディース",1], ["メンズ", 2], ["ベビー・キッズ", 3], ["インテリア・住まい・小物", 4], ["本・音楽・ゲーム", 5], ["おもちゃ・ホビー・グッズ", 6], ["コスメ・香水・美容", 7], ["家電・スマホ・カメラ", 8] ,["スポーツ・レジャー", 9], ["ハンドメイド", 10], ["チケット", 11], ["自動車・オートバイ", 12], ["その他", 13] ], prompt: "---"
+                -# = f.select :category_id, [ ["レディース","レディース"], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"], ["本・音楽・ゲーム", "本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容", "コスメ・香水・美容"], ["家電・スマホ・カメラ", "家電・スマホ・カメラ"] ,["スポーツ・レジャー", "スポーツ・レジャー"], ["ハンドメイド", "ハンドメイド"], ["チケット", "チケット"], ["自動車・オートバイ", "自動車・オートバイ"], ["その他", "その他"] ], prompt: "---"
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b サイズ
               .main__sell__category__right__content__form
                 %span.gray 任意
-                -# = f.select :size_id, [ ["牧size",1], ["ハッシーsize", 2], ["mako_size", 3]], prompt: "---"
+                -# = f.select :size_id, [ ["牧size","牧size"], ["ハッシーsize", "ハッシーsize"], ["mako_size", "mako_size"]], prompt: "---"
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b ブランド名
@@ -75,7 +75,7 @@
                 %b 配送の方法
               .main__sell__delivery__rigft__content__form
                 %span 必須
-                = f.select :delivery, [ ["ゆうパック",1], ["クリックぽすと", 2], ["クロネコヤマト", 3]], prompt: "---"
+                = f.select :delivery, [ ["ゆうパック","ゆうパック"], ["クリックぽすと", "クリックぽすと"], ["クロネコヤマト", "クロネコヤマト"]], prompt: "---"
               .main__sell__delivery__rigft__content__item
                 %b 発送元の地域
               .main__sell__delivery__rigft__content__form
