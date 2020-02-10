@@ -18,6 +18,13 @@ class ItemsController < ApplicationController
     end
   end
 
+  def show
+    @item = Item.find(params[:id])
+    @items = Item.all.limit(3)
+    @images = @item.images
+    @user = User.find(@item.seller_id)
+  end
+
 private
   def item_params
     params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
@@ -30,9 +37,7 @@ private
   def buy
   end
 
-  def show
-    @item = Item.find(params[:id])
-  end
+  
 
     
 end
