@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
-  resources :items,only:[:index, :new, :create, :confirm, :buy] do
+  resources :items,only:[:index, :new, :create, :show, :confirm, :buy] do
     collection do
       get 'confirm'
       get 'buy'
