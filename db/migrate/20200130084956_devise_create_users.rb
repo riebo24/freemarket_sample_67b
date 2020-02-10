@@ -15,13 +15,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :house_number
       t.string :building_name
-      t.string :phone_number 
+      t.string :phone_number
       t.date :birthday
       t.integer :card
-      t.string :profile	
-      t.string :email             
+      t.string :profile
+      t.string :email
       t.string :encrypted_password
-      
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
