@@ -53,27 +53,19 @@
         display: flex;
         background-color: #fff;
 
-        &__left{
-          width: 140px;
-          height: 87px;
-          background-color: #fff;
-        }
         &__center{
           width: 140px;
           height: 87px;
           background-color: #fff;
-        }
-        &__right{
-          width: 140px;
-          height: 87px;
-          background-color: #fff;
+      
         }
       }
     }
       
     &__span{
+      margin-bottom: 10px;
       width: 610px;
-      height: 53px;
+      height: 40px;
       font-size: 46px;
       font-weight: bold;
       text-align: center;
@@ -186,4 +178,23 @@ table td{
   background-size: 200% auto;
   
 }
+
+.details__item__changebox{
+  text-align: center;
+  &__a{
+    width: 100%;
+    max-width: 340px;
+    padding: 15px 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 30px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    background-color: #33cccc;
+    background-size: 200% auto;
+  }
+}
+
 

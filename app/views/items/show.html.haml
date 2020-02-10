@@ -1,30 +1,23 @@
 .details
   .details__top
     .details__top__title
-      product1
+      = @item.name
 
     .details__top__middle
-      .details__top__middle__top
-        %ul
-          %li
-          %img{height:  "350",src:  "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png",width:  "450"}/
-        
-      .details__top__middle__low
-        .details__top__middle__low__left
-          %ul
-            %li
-              %img{height:  "90", src:  "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", width:  "140"}/
-        .details__top__middle__low__center
-          %ul
-            %li
-              %img{height:  "90", src:  "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png", width:  "140"}/
-        .details__top__middle__low__right
-          %ul
-            %li
-              %img{height:  "90", src:  "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png", width:  "140"}/
-    .details__top__span
-      ¥
-      = @item.price
+      - @items.each do |item|
+        .details__top__middle__top
+          = image_submit_tag item.images[0][:image_name], class: "image10" , height: "300px"
+          -#  , width: "220px"
+            
+        .details__top__middle__low
+          -  @item.images.each do |image|
+            .details__top__middle__low__center
+              = image_submit_tag image[:image_name], class: "image10" , height: "120px"
+            
+         
+      .details__top__span
+        ¥
+        = @item.price
       
     .details__top__itembox
       .details__top__itembox__left
@@ -39,7 +32,8 @@
       %tr
         %th 出品者
         %td 
-          = @item.name 
+          = @item.name
+          = User.find(@item.seller_id).nickname
       %tr
         %th カテゴリー
         %td
@@ -65,11 +59,11 @@
       %tr
         %th 発送元の地域
         %td 
-          = link_to '青森県' 
+          = @item.send_address
       %tr
         %th 発送日の目安
         %td 
-          = @item.delivery
+          = @item.send_date
 
 
     .details__top__test
@@ -91,4 +85,13 @@
       %form{cols:  "120",row:  "10"}
     .bottom
       コメントする
-    
+  
+  .details__item__changebox
+    .details__item__changebox__a
+      %a.btn-default.btn-red{:href => "https://www.mercari.com/jp/sell/edit/m26953239883/"} 商品の編集
+      %p.text-center or
+      %form{:action => "/jp/mypage/items/deactivate/m26953239883/", :method => "POST", :novalidate => "novalidate"}
+        %input{:name => "__csrf_value", :type => "hidden", :value => "48293b4d7e9aece16d68009a515fa7eb5a386ee035c1c663d3ae1ec9723516999e147b8a85859a25bf6172d4ce3b234c47c357597d2576a176be216886eb3d1a3"}/
+        %button.btn-default.btn-gray{:type => "submit"} 出品を一旦停止する
+      %button.btn-default.btn-gray{"data-modal" => "delete-item", "data-open" => "modal"}
+        この商品を削除する
