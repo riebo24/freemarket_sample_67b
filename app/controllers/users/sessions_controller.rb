@@ -1,16 +1,17 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
+  before_action :configure_permitted_parameters, only: [:create]
 
   def new
   end
 
   def create
-    @user = User.find_by(sign_in_params)
+    @user = User.find_by([:email])
     if @user.present?
-      bypass_sign_in(@user)
-     redirect_to my_page_path
-    #  , notice: 'ログインに成功しました'
+      sign_in(@user)
+     redirect_to my_page_path(@user)
+    #  notice: 'ログインに成功しました'
     else 
     #  flash.now[:alert] = 'メールアドレスとパスワードの組み合わせが一致しません'
      render :new
@@ -18,7 +19,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def destroy
-    @user = User.find(current_user.id) # current_userにする
+    @user = User.find(current_user.id) 
     @user.destroy
     redirect_to root_path
   end
@@ -26,7 +27,7 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   def sign_in_params
-    params.require(:user).permit(:email, :password, :encrypted_password)
+    params.require(:session).permit(:email, :encrypted_password)
   end
 
  
