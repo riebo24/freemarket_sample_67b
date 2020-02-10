@@ -32,8 +32,8 @@
       %tr
         %th 出品者
         %td 
+          = @item.name
           = User.find(@item.seller_id).nickname
-          -# = @item.seller_id.nickname
       %tr
         %th カテゴリー
         %td
