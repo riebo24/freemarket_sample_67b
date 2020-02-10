@@ -30,7 +30,7 @@
             = f.label :password, "パスワード", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.password_field :password, autocomplete: "password", placeholder: '７文字以上のパスワード', class: 'main-user__fields__element__text'
+          = f.password_field :password, autocomplete: "off", placeholder: '７文字以上のパスワード', class: 'main-user__fields__element__text'
 
       .main-user__fields
         .main-user__fields__element
@@ -38,7 +38,7 @@
             = f.label :password_confirmation, "パスワード(確認用)", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.password_field :password_confirmation, autocomplete: "password", placeholder: 'パスワード（確認用）', class: 'main-user__fields__element__text'
+          = f.password_field :password_confirmation, autocomplete: "off", placeholder: 'パスワード（確認用）', class: 'main-user__fields__element__text'
 
       .main-user__field
         %h3 本人確認
@@ -53,7 +53,7 @@
             .main-user__fields__element__title__notice
               必須
         .main-user__fields__name
-          = f.text_field :last_name, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）山田'
+          = f.text_field :first_name, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）山田'
           = f.text_field :last_name, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '例）真'
 
       .main-user__fields
@@ -64,7 +64,7 @@
             .main-user__fields__element__title__notice
               必須
         .main-user__fields__name
-          = f.text_field :last_kane, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）ヤマダ'
+          = f.text_field :first_kane, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）ヤマダ'
           = f.text_field :last_kane, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '例）マコト'
 
       .main-user__fields
@@ -74,7 +74,7 @@
               生年月日
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :last_kane, autofocus: true, class: 'main-user__fields__element__text', placeholder: '例）20200221'
+          = f.text_field :birthday, autofocus: true, class: 'main-user__fields__element__text', placeholder: '例）20200221'
 
       .main-user__fields
         %h2 住所登録         
@@ -119,13 +119,13 @@
             = f.label :card , "カード番号", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__selective
               任意
-          = f.text_field :phone_number , autofocus: true, class: 'main-user__fields__element__text', placeholder: 'スペースは不要です'
+          = f.text_field :card , autofocus: true, class: 'main-user__fields__element__text', placeholder: 'スペースは不要です'
         .main-user__fields__element
           .main-user__fields__element__title
-            = f.label :card , "自己紹介など", class: 'main-user__fields__element__title__label'
+            = f.label :profile , "自己紹介など", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :phone_number , autofocus: true, class: 'main-user__fields__element__text', placeholder: '私はビートルズのファンです'
+          = f.text_field :profile , autofocus: true, class: 'main-user__fields__element__text', placeholder: '私はビートルズのファンです'
       
       -# .consent(余力があればウィザード仕様に変更する)
       -#   「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
