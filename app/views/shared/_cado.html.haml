@@ -1,0 +1,39 @@
+.cado
+  .cado__titre
+    クレジットカード情報入力
+  .cado__information
+    .cado__information__number
+      カード番号
+      .cado__information__number__1
+        %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => "",class: "input-default"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?73731125", :width => "49"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?73731125", :width => "34"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?73731125", :width => "30"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?73731125", :width => "32"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?73731125", :width => "21"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?73731125", :width => "32"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?73731125", :width => "32"}/
+
+    .cado__information__deadline
+      .cado__information__deadline__top
+        有効期限 
+      .cado__information__deadline__center
+        .cado__information__deadline__center__text1
+          %select#payment_card_expire_mm.select-default{class: "calendar"}
+          %span 月
+          -# = f.select :, [ ["送料込み(出品者負担)","送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"] ], prompt: "---"
+            
+  
+        .cado__information__deadline__center__text1
+          %select#payment_card_expire_mm.select-default{class: "calendar"}
+          %span
+            年
+    .cado__information__code
+      .cado__information__code__top
+        セキュリティコード
+      %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+
+    .cado__information__addition
+      %button#submit-button.btn-default.btn-red{:type => "button",class: "btn"} 追加する
+
+  
