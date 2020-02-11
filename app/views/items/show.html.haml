@@ -91,15 +91,17 @@
       %br/
       不快な言葉遣いなどは利用制限や退会処分となることがあります。
       %form{cols:  "120",row:  "10"}
-    .bottom
-      コメントする
-  
-  .details__item__changebox
-    .details__item__changebox__a
-      %a.btn-default.btn-red{:href => "https://www.mercari.com/jp/sell/edit/m26953239883/"} 商品の編集
-      %p.text-center or
-      %form{:action => "/jp/mypage/items/deactivate/m26953239883/", :method => "POST", :novalidate => "novalidate"}
-        %input{:name => "__csrf_value", :type => "hidden", :value => "48293b4d7e9aece16d68009a515fa7eb5a386ee035c1c663d3ae1ec9723516999e147b8a85859a25bf6172d4ce3b234c47c357597d2576a176be216886eb3d1a3"}/
-        %button.btn-default.btn-gray{:type => "submit"} 出品を一旦停止する
-      %button.btn-default.btn-gray{"data-modal" => "delete-item", "data-open" => "modal"}
-        この商品を削除する
+    .comment
+      = link_to 'コメントする' 
+  .details__item
+    .details__item__changeboxes
+      .details__item__changeboxes__btn
+        = link_to '商品の編集' 
+    .details__item__changeboxes
+      .details__item__changeboxes__btn
+        = link_to '出品を一旦停止する' 
+    .details__item__changeboxes
+      .details__item__changeboxes__btn
+        = link_to 'この商品を削除する'
+
+
