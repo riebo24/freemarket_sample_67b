@@ -19,12 +19,14 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find_by(id:params[:id])
-    if @item.seller_id == @current_user.id && @item.destroy
+    item = Item.find_by(id:params[:id])
+    if item.seller_id == current_user.id && item.destroy
       redirect_to root_path
     else
       render :index
     end
+    # @item = Item.find(params[:id])
+    # @item.destroy
   end
 
   def confirm
@@ -36,8 +38,8 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @items = Item.includes(:images).all.order(updated_at: :desc).limit(1)
-    @images = @item.images
+    # @item = Item.includes(:images).all.order(updated_at: :desc).limit(1)
+    @image = @item.images
     # @user = User.find(@item.seller_id)
   end
   

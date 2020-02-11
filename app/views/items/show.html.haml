@@ -4,24 +4,13 @@
       = @item.name
 
     .details__top__middle
-      - @items.each do |item|
-        .details__top__middle__top
-          - item.images.first(1).each do |image|
-            = image_submit_tag image.image_name, class: "image111" , height: "500px" , width: "400px"
-          
-        .details__top__middle__low
-          -  @item.images.each do |image|
-            - item.images.first(1).each do |image|
-              .details__top__middle__low__center
-                = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
-          
-              - item.images.first(2).each do |image|
-                .details__top__middle__low__center
-                  = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
-          
-              - item.images.first(3).each do |image|
-                .details__top__middle__low__center
-                  = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
+      .details__top__middle__top
+        = image_submit_tag @image.first.image_name, class: "image111" , height: "500px" , width: "400px"    
+        -# .details__top__middle__low
+        -#   -  @item.images.each do |image|
+        -#     - item.images.first(1).each do |image|
+        -#       .details__top__middle__low__center
+        -#         = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
          
       .details__top__span
         ¥
@@ -102,6 +91,7 @@
         = link_to '出品を一旦停止する' 
     .details__item__changeboxes
       .details__item__changeboxes__btn
-        = link_to 'この商品を削除する'
+        = link_to '削除', "#{@item.id}", method: :delete
+
 
 
