@@ -43,7 +43,7 @@ header{
 .child-wrap{
   display: block; //のちにdisplay:none；にします
   background-color:white;
-  width:auto;
+  width:  auto;
   position: absolute;
   .child{
     width:279px;
@@ -63,14 +63,14 @@ header{
 
 //孫カテゴリー
 .grand-child-wrap{
-  display: block;　//のちにdisplay:none；にします
-  width:auto;
+  display: block;
+  width: 10px;
   position: absolute;
   top:0;
   left:279px;
   bottom:0;
   background: #fff;
-
+}
   .grand-child{
     width:279px;
     height: 70px;
