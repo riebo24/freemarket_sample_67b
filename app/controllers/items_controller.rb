@@ -36,9 +36,9 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    @items = Item.all.limit(3)
+    @items = Item.includes(:images).all.order(updated_at: :desc).limit(1)
     @images = @item.images
-    @user = User.find(@item.seller_id)
+    # @user = User.find(@item.seller_id)
   end
   
 private
