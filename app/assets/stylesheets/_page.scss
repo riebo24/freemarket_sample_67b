@@ -1,8 +1,7 @@
 .page{
-  width: auto;
+  
   height: 1270px;
-  margin: 40px auto 0;
-  width: 1020px;
+ 
   padding: 0 0 40px 0;
   display: flex;
   background-color: #f8f8f8;
@@ -129,3 +128,10 @@
 // .page__left__top:hover {
 //   background-color: red;
 //   }
+
+.mypage{
+  display: flex;
+  margin: 40px auto 0;
+  width: 1020px;
+}
+

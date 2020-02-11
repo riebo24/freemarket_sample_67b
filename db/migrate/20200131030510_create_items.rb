@@ -7,8 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :cost,        null: false
       t.string :delivery,    null: false
       t.references :brand,     foreign_key: true
-      t.boolean :deal
-
+      t.boolean :deal, default: false, null: false
       t.timestamps
     end
   end
