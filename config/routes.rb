@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   devise_for :users
   # , controllers: {
   #  registrations: 'users/registrations',
@@ -12,19 +12,18 @@ Rails.application.routes.draw do
   # end
 
   root to: 'items#index'
-  resources :items,only:[:index, :new, :create, :confirm, :buy] do
-
-    collection do 
+  resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
+    collection do
       get 'confirm'
       get 'buy'
     end
   end
-  
+
   resources :comments
 
   resources :images
   resources :brands
   resources :users, only: :show
-  
 
-end 
+
+end

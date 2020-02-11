@@ -48,7 +48,7 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 |cost|string|null: false|
 |delivery|string|null: false|
 |category_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
+<!-- |size_id|references|null: false, foreign_key: true| -->
 |brand_id|references|foreign_key: true|
 |deal|boolean||
 |send_address|string|null: false|
@@ -90,15 +90,15 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 ### Association
 - has_many :items
 
-## sizesテーブル
+<!-- ## sizesテーブル
 |colunu|Type|options|
 |------|----|-------|
 |size|string|null: false|
 
 ### Asociation
 - has_many :items
-- has_many :categorys, through: :categorys_sizes
-
+- has_many :categorys, through: :categorys_sizes -->
+<!-- 
 ## categorys_sizesテーブル
 |colunu|Type|options|
 |------|----|-------|
@@ -107,7 +107,7 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 
 ### Asociation
 - belongs_to :size
-- belongs_to :category
+- belongs_to :category -->
 
 
 This README would normally document whatever steps are necessary to get the
