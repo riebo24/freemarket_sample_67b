@@ -42,7 +42,7 @@
                 %b カテゴリー
               .main__sell__category__right__content__form
                 %span 必須
-                -# = f.select :category_id, [ ["レディース","レディース"], ["メンズ", "メンズ"], ["ベビー・キッズ", "ベビー・キッズ"], ["インテリア・住まい・小物", "インテリア・住まい・小物"], ["本・音楽・ゲーム", "本・音楽・ゲーム"], ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"], ["コスメ・香水・美容", "コスメ・香水・美容"], ["家電・スマホ・カメラ", "家電・スマホ・カメラ"] ,["スポーツ・レジャー", "スポーツ・レジャー"], ["ハンドメイド", "ハンドメイド"], ["チケット", "チケット"], ["自動車・オートバイ", "自動車・オートバイ"], ["その他", "その他"] ], prompt: "---"
+                = f.collection_select :category_id, Category.all, :id, :name, prompt: "---"
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b ブランド名

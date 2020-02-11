@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:name, :price, :status, :category, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
+    params.require(:item).permit(:name, :price, :status, :category_id, :brand, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_item
@@ -51,6 +51,3 @@ private
   end
 
 end
-
-# :brand_id,
-#まだテーブルがないため省いています
