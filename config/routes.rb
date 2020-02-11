@@ -20,9 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments
-
   resources :images
-  resources :brands
   resources :users, only: :show
 
 

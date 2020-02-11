@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)    
+    @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)
   end
 
   def new
@@ -40,10 +40,10 @@ class ItemsController < ApplicationController
     @images = @item.images
     @user = User.find(@item.seller_id)
   end
-  
+
 private
   def item_params
-    params.require(:item).permit(:name, :price, :status, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
+    params.require(:item).permit(:name, :price, :status, :category, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id])
   end
 
   def set_item
@@ -52,6 +52,5 @@ private
 
 end
 
-# @items = Item.includes(:images).order('created_at DESC')
-# :category_id, :size_id,:brand_id,
+# :brand_id,
 #まだテーブルがないため省いています
