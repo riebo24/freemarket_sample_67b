@@ -6,14 +6,22 @@
     .details__top__middle
       - @items.each do |item|
         .details__top__middle__top
-          = image_submit_tag item.images[0][:image_name], class: "image10" , height: "300px"
-          -#  , width: "220px"
-            
+          - item.images.first(1).each do |image|
+            = image_submit_tag image.image_name, class: "image111" , height: "500px" , width: "400px"
+          
         .details__top__middle__low
           -  @item.images.each do |image|
-            .details__top__middle__low__center
-              = image_submit_tag image[:image_name], class: "image10" , height: "120px"
-            
+            - item.images.first(1).each do |image|
+              .details__top__middle__low__center
+                = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
+          
+              - item.images.first(2).each do |image|
+                .details__top__middle__low__center
+                  = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
+          
+              - item.images.first(3).each do |image|
+                .details__top__middle__low__center
+                  = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
          
       .details__top__span
         ¥
@@ -33,7 +41,7 @@
         %th 出品者
         %td 
           = @item.name
-          = User.find(@item.seller_id).nickname
+          -# = User.find(@item.seller_id).nickname
       %tr
         %th カテゴリー
         %td
