@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-
+  before_action :authenticate_user!, only: :new
   def index
     @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)
   end
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
     else
       render :index
     end
-    
+
   end
 
   def confirm
