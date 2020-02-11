@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :images
   resources :brands
   resources :users, only: :show
+  resources :cards
 
 
 end

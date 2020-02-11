@@ -1,39 +1,98 @@
-.cado
-  .cado__titre
-    クレジットカード情報入力
-  .cado__information
-    .cado__information__number
-      カード番号
-      .cado__information__number__1
-        %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => "",class: "input-default"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?73731125", :width => "49"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?73731125", :width => "34"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?73731125", :width => "30"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?73731125", :width => "32"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?73731125", :width => "21"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?73731125", :width => "32"}/
-        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?73731125", :width => "32"}/
+%h1
+  ajax#index
+%p#hoge
+  赤になるよ
 
-    .cado__information__deadline
-      .cado__information__deadline__top
-        有効期限 
-      .cado__information__deadline__center
-        .cado__information__deadline__center__text1
-          %select#payment_card_expire_mm.select-default{class: "calendar"}
-          %span 月
-          -# = f.select :, [ ["送料込み(出品者負担)","送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"] ], prompt: "---"
-            
+%script
+  $("#hoge").css("color","red")
+
+
+
+-# <script type="text/javascript" src="https://js.pay.jp/"></script>
+-# <script type="text/javascript">Payjp.setPublicKey('pk_test_0e17fba3d10886b3eddc8c95');</script>
+
+
+-# .cado
+-#   .cado__titre
+-#     クレジットカード情報入力
+-#   = form_with(model: card, class:"cado__information") do |f|
+-#     -# html: {class: "cado__information"} do |f|
+-#     .cado__information__number
+-#       カード番号
+-#       .cado__information__number__1
+-#         = f.text_field :card_id, class:"input-default", placeholder: "半角数字のみ"
+-#         -# %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => "",class: "input-default"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?73731125", :width => "49"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?73731125", :width => "34"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?73731125", :width => "30"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?73731125", :width => "32"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?73731125", :width => "21"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?73731125", :width => "32"}/
+-#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?73731125", :width => "32"}/
+
+-#     .cado__information__deadline
+-#       .cado__information__deadline__top
+-#         有効期限 
+-#       .cado__information__deadline__center
+-#         .cado__information__deadline__center__text1
+-#           = f.select :card_id, [[1],[2],[3],[4],[5],[6],[7],[8],[9],[10],[11],[12]], prompt: "---", class: "calendar exp_month"
+-#           -# [ ["新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], prompt: "---"
+-#           -# %select#payment_card_expire_mm.select-default{class: "calendar"}
+-#           %span 月
+ 
+-#         .cado__information__deadline__center__text1
+-#           = f.select :card_id, [[20],[21],[22],[23],[24],[25],[26],[27],[28],[29],[30],[31],[32]], prompt: "---", class: "calendar exp_year"  
+-#           -# %select#payment_card_expire_mm.select-default{class: "calendar"}
+-#           %span
+-#             年
+-#     .cado__information__code
+-#       .cado__information__code__top
+-#         セキュリティコード
+-#       = f.text_field :card_id , placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default cvc"
+-#       -# %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+
+-#     .cado__information__addition
+-#       = f.submit "追加する", class: "btn"
+-#       -# %button#submit-button.btn-default.btn-red{:type => "button",class: "btn"} 追加する
+-#     .result
+
+
+-# :javascript
+-#   (function() {
+-#     var form = $(".cado__information"),
+-#         number = form.find('.'),
+-#         exp_month = form.find('.exp_month'),
+-#         exp_year = form.find('.exp_year'),
+-#         cvc = form.find('.cvc');
   
-        .cado__information__deadline__center__text1
-          %select#payment_card_expire_mm.select-default{class: "calendar"}
-          %span
-            年
-    .cado__information__code
-      .cado__information__code__top
-        セキュリティコード
-      %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+-#     $('.cado__information').summit(function(){
+-#       form.find(".btn").prop("disabled", true);
 
-    .cado__information__addition
-      %button#submit-button.btn-default.btn-red{:type => "button",class: "btn"} 追加する
+-#       var card = {
+-#         number: number.value,
+-#         cvc: cvc.value,
+-#         exp_month: exp_month.value,
+-#         exp_year: exp_year.value
+-#       };
 
-  
+-#       Payjp.createToken(card, function(s, response) {
+-#       if (response.error) {
+-#         form.find('.payment-errors').text(response.error.message);
+-#         form.find('button').prop('disabled', false);
+-#       }
+-#       else {
+-#         $(".number").removeAttr("name");
+-#         $(".cvc").removeAttr("name");
+-#         $(".exp_month").removeAttr("name");
+-#         $(".exp_year").removeAttr("name");
+
+-#         var token = response.id;
+
+-#         $(".result").append("1")
+-#         form.append($('<input type="hidden" name="payjpToken" />').val(token));
+-#         form.get(0).submit();
+-#       }
+
+-#     })
+-#   });
+-# })
