@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments
-
+  resources :categorys, only:[:index] 
   resources :images
   resources :brands
   resources :users, only: :show
