@@ -37,9 +37,7 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
-    
-    @image = @item.images
-    
+    @images = @item.images
   end
 
 private
