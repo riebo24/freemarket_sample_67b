@@ -7,14 +7,10 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def create
-    @user = User.find_by([:email])
-    if @user.present?
-      sign_in(@user)
-     redirect_to my_page_path(@user)
-    #  notice: 'ログインに成功しました'
-    else 
-    #  flash.now[:alert] = 'メールアドレスとパスワードの組み合わせが一致しません'
-     render :new
+    if user = User.authentication_keys(params[:email], params[:password])
+      session[:user_id] = user.id
+　　   else
+      render ‘create’
     end
   end
 
@@ -26,9 +22,9 @@ class Users::SessionsController < Devise::SessionsController
 
   protected
 
-  def sign_in_params
-    params.require(:session).permit(:email, :encrypted_password)
-  end
+  # def sign_in_params
+  #   params.require(:session).permit(:email, :encrypted_password)
+  # end
 
  
   def after_sign_in_path_for(resource)

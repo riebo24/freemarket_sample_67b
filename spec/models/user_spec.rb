@@ -162,7 +162,7 @@ describe User do
     end
 
     it "is invalid with a last_kane that has more than 10 characters " do
-      user = build(:user, last_kanee: "aaaaaaaaaaa")
+      user = build(:user, last_kane: "aaaaaaaaaaa")
       user.valid?
       expect(user.errors[:last_kane]).to include("is too long (maximum is 10 characters)")
     end

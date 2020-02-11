@@ -95,5 +95,7 @@ gem 'devise-i18n-views'
 
 gem 'payjp'
 
+gem 'active_hash'
+
 
 
