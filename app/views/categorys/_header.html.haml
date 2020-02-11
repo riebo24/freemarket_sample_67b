@@ -1,0 +1,4 @@
+%li.header__b__1__parentes__parent__children
+  = link_to "レディース", category_path(id: 1)
+  %ul.header__menu-box--left__children
+    = render "categores/header_child", collection: @category_children1, as: "category"
