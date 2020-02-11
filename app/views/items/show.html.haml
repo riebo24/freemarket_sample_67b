@@ -6,12 +6,7 @@
     .details__top__middle
       .details__top__middle__top
         = image_submit_tag @image.first.image_name, class: "image111" , height: "500px" , width: "400px"    
-        -# .details__top__middle__low
-        -#   -  @item.images.each do |image|
-        -#     - item.images.first(1).each do |image|
-        -#       .details__top__middle__low__center
-        -#         = image_submit_tag image.image_name, class: "image111" , height: "100px" , width: "100px"
-         
+                 
       .details__top__span
         ¥
         = @item.price
