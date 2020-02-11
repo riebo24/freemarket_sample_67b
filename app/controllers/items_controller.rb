@@ -25,8 +25,7 @@ class ItemsController < ApplicationController
     else
       render :index
     end
-    # @item = Item.find(params[:id])
-    # @item.destroy
+    
   end
 
   def confirm
