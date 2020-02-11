@@ -12,7 +12,17 @@
         
     .top__header__b
       .top__header__b__1
-        = link_to "カテゴリー",  class: 'btn1'
+        = link_to categorys_path do
+          -# = fa_icon "list-ul", class: 'header__menu-box--left__icon'
+          カテゴリーから探す
+          %ul.top__header__b__1__parents
+            %li.top__header__b__1__parents__parent
+              = link_to "レディース", categorys_path
+              %ul.top__header__b__1__children
+                = render "categories/header_child", collection: @category_children1, as: "category"
+
+
+
         = link_to "ブランド",  class: 'btn1'
       .top__header__b__2
         - if user_signed_in? 
