@@ -24,7 +24,7 @@
         送料込み
 
     .details__top__itembox2
-      product1
+      = @item.status
     .details__top__list
     %table{border:  "1"}
       %tr
@@ -35,7 +35,7 @@
       %tr
         %th カテゴリー
         %td
-          = Category.find(@item.category_id).name
+          -# = Category.find(@item.category_id).name
           %br/
           = link_to 'トップス'
           %br/
@@ -49,7 +49,7 @@
       %tr
         %th 商品の状態
         %td 
-          = @item.status
+          = @item.condition
       %tr
         %th 配送料の負担
         %td 
@@ -72,17 +72,18 @@
         = link_to root_path do
           🏴不適切な商品の通報
 
-  .details__bottom
-    .details__bottom__high
-      %textarea{cols:  "70", rows:  "6"} 
-    .details__bottom__low
-      %p.noticeMsg
-      相手のことを考え丁寧なコメントを心がけましょう。
-      %br/
-      不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %form{cols:  "120",row:  "10"}
-    .comment
-      = link_to '🗯コメントする' 
+  -# .details__bottom
+  -#   .details__bottom__high
+  -#     %textarea{cols:  "70", rows:  "6"} 
+  -#   .details__bottom__low
+  -#     %p.noticeMsg
+  -#     相手のことを考え丁寧なコメントを心がけましょう。
+  -#     %br/
+  -#     不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  -#     %form{cols:  "120",row:  "10"}
+  -#   .comment
+  -#     = link_to '🗯コメントする' 
+
   .details__item
     .details__item__changeboxes
       .details__item__changeboxes__btn
@@ -94,5 +95,5 @@
     .details__item__changeboxes
       .details__item__changeboxes__btn
         = link_to '削除', "#{@item.id}", method: :delete
-.wrapper
-  = render 'shared/footer'
+-# .wrapper
+-#   = render 'shared/footer'

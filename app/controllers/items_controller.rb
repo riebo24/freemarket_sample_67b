@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
   def index
     @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)
-    @categories = Category.where(ancestry: 1)
+    # @categories = Category.where(ancestry: 1)
   end
 
   def new
