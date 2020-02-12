@@ -31,7 +31,7 @@ class ItemsController < ApplicationController
 
   def confirm
     @item= Item.find(params[:id])
-    if @item.seller_id?
+    if @item.buyer_id?
       redirect_to root_path
     else
       card = Card.where(user_id: current_user.id).first
@@ -48,7 +48,6 @@ class ItemsController < ApplicationController
   end
 
   def buy
-    # binding.pry
     card = Card.where(user_id: current_user.id).first
     if card.blank?
       redirect_to action: "new"
