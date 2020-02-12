@@ -12,9 +12,9 @@
       .details__top__middle__down
         - @images.each do |image|
           = image_tag image.image_name.url, class: "image111", height: "90px", width: "140px"
-      .details__top__span
-        ¥
-        = @item.price
+    .details__top__span
+      ¥
+      = @item.price
 
     .details__top__itembox
       .details__top__itembox__left
@@ -27,37 +27,38 @@
 
     .details__top__itembox2
       商品説明
+    .details__top__itembox2
       = @item.status
     .details__top__list
-    %table{border:  "1"}
-      %tr
-        %th 出品者
-        %td
-          = User.find(@item.seller_id).nickname
-      %tr
-        %th カテゴリー
-        %td
-          = Category.find(@item.category_id).name
-      %tr
-        %th ブランド
-        %td
-          = @item.brand
-      %tr
-        %th 商品の状態
-        %td
-          = @item.condition
-      %tr
-        %th 配送料の負担
-        %td
-          = @item.cost
-      %tr
-        %th 発送元の地域
-        %td
-          = @item.send_address
-      %tr
-        %th 発送日の目安
-        %td
-          = @item.send_date
+      %table{border:  "1"}
+        %tr
+          %th 出品者
+          %td
+            = User.find(@item.seller_id).nickname
+        %tr
+          %th カテゴリー
+          %td
+            = Category.find(@item.category_id).name
+        %tr
+          %th ブランド
+          %td
+            = @item.brand
+        %tr
+          %th 商品の状態
+          %td
+            = @item.condition
+        %tr
+          %th 配送料の負担
+          %td
+            = @item.cost
+        %tr
+          %th 発送元の地域
+          %td
+            = @item.send_address
+        %tr
+          %th 発送日の目安
+          %td
+            = @item.send_date
 
 
     .details__top__test
@@ -95,4 +96,3 @@
 
 .wrapper
   = render 'shared/footer'
-
