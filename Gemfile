@@ -44,6 +44,9 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -90,10 +93,10 @@ gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
-
 gem 'payjp'
 
 gem 'jquery-turbolinks' #jqueryとturbolinksを共存させるためのgem
+gem 'active_hash'
 
 
 
