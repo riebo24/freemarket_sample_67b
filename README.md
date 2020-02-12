@@ -17,13 +17,13 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 <!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
-|nickname|string|null: false,limit:15|
+|nickname|string|null: false,limit:10|
 |emall|string|null: false|
 |password|string|null: false|
-|first_name|string|null: false,limit:30|
-|last_name|string|null: false,limit:30|
-|first_kane|string|null: false,limit:30|
-|last_kane|string|null: false,limit:30|
+|first_name|string|null: false,limit:10|
+|last_name|string|null: false,limit:10|
+|first_kane|string|null: false,limit:10|
+|last_kane|string|null: false,limit:10|
 |post_number|interger|null: false|
 |prefecture|string|null: false|
 |city|string|null: false|

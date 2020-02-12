@@ -1,0 +1,51 @@
+.categories
+  %ul.categories__parents
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 1)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children1, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 2)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children2, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 3)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children3, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 4)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children4, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 5)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children5, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 6)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children6, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 7)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children7, as: "category"
+    
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 8)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children8, as: "category"
+    
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 9)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children9, as: "category"
+
+    %li.categories__parents__parent
+      = link_to "カテゴリー1", category_path(id: 10)
+        %ul.categories__parents__parent__children
+          = render "categories/children", collection: @category_children10, as: "category"
