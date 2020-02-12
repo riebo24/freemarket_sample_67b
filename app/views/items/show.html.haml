@@ -5,7 +5,7 @@
 
     .details__top__middle
       .details__top__middle__top
-        = image_submit_tag @image.first.image_name, class: "image111" , height: "500px" , width: "400px"    
+        = image_submit_tag @images.first.image_name, class: "image111" , height: "500px" , width: "400px"    
                  
       .details__top__span
         ¥
@@ -29,7 +29,7 @@
       %tr
         %th カテゴリー
         %td
-          = link_to 'レディース'
+          = Category.find(@item.category_id).name
           %br/
           = link_to 'トップス'
           %br/
@@ -76,7 +76,7 @@
       不快な言葉遣いなどは利用制限や退会処分となることがあります。
       %form{cols:  "120",row:  "10"}
     .comment
-      = link_to 'コメントする' 
+      = link_to '🗯コメントする' 
   .details__item
     .details__item__changeboxes
       .details__item__changeboxes__btn
