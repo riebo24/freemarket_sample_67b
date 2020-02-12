@@ -1,3 +1,5 @@
+.wrapper
+  = render 'shared/header'
 .details
   .details__top
     .details__top__title
@@ -5,8 +7,12 @@
 
     .details__top__middle
       .details__top__middle__top
-        = image_submit_tag @image.first.image_name, class: "image111" , height: "500px" , width: "400px"    
-                 
+        = image_submit_tag @images.first.image_name, class: "image111" , height: "300px" , width: "500px"    
+        .details__top__middle__top__a
+          = image_submit_tag @images.first.image_name, class: "image111" , height: "100px" , width: "100px"    
+          .details__top__middle__top__a__b
+            = image_submit_tag @images.first.image_name, class: "image111" , height: "100px" , width: "100px"    
+                               
       .details__top__span
         ¥
         = @item.price
@@ -87,6 +93,5 @@
     .details__item__changeboxes
       .details__item__changeboxes__btn
         = link_to '削除', "#{@item.id}", method: :delete
-
-
-
+.wrapper
+  = render 'shared/footer'
