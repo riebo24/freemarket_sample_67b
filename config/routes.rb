@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'items#index'
-  resources :items,only:[:index, :new, :create, :show, :confirm, :buy] do
+  resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
     collection do
       get 'confirm'
       get 'buy'
@@ -20,9 +20,9 @@ Rails.application.routes.draw do
   end
 
   resources :comments
+  resources :categorys, only:[:index] 
 
   resources :images
-  resources :brands
   resources :users, only: :show
   resources :cards
 
