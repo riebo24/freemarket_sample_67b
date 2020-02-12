@@ -29,7 +29,7 @@
       display: flex;
       flex-direction: column;
       width: 620px;
-      height: 443px;
+      height: 480px;
       align-items: center;
       padding: 0 auto;
 
@@ -41,7 +41,9 @@
       flex-direction: column;
       align-items: center;
       background-color: #fff;
-      
+      &__a{
+        display: flex;
+      }
       }
 
       &__low{
