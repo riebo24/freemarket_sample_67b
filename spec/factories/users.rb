@@ -2,8 +2,8 @@ FactoryBot.define do
 
   factory :user do
     nickname              {"キャベツ"}
-    password              {"00000000"}
-    password_confirmation {"00000000"}
+    password              {"0000000"}
+    password_confirmation {"0000000"}
     post_number           {"1234567"}
     prefecture            {"大阪"}
     city                  {"大阪"}
