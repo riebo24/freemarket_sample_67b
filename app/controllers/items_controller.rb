@@ -25,7 +25,6 @@ class ItemsController < ApplicationController
     else
       render :index
     end
-
   end
 
   def confirm
@@ -38,6 +37,20 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = @item.images
+    # if @item.seller_id == current_user.id
+    #   redirect_to edit_item_path(@item.id)
+    # else
+    # end
+  end
+
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    redirect_to item_path(@item.id)
   end
 
 private

@@ -16,11 +16,12 @@ Rails.application.routes.draw do
     collection do
       get 'confirm'
       get 'buy'
+      get "edit"
     end
   end
 
   resources :comments
-  resources :categorys, only:[:index] 
+  resources :categorys, only:[:index]
 
   resources :images
   resources :users, only: :show
