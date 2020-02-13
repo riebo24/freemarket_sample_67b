@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    # binding.pry
     if @item.save!
       redirect_to root_path
     else
@@ -37,10 +38,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
     @images = @item.images
-    # if @item.seller_id == current_user.id
-    #   redirect_to edit_item_path(@item.id)
-    # else
-    # end
   end
 
   def edit
@@ -49,13 +46,14 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
+    # binding.pry
     @item.update(item_params)
     redirect_to item_path(@item.id)
   end
 
 private
   def item_params
-    params.require(:item).permit(:name, :price, :status, :category_id, :brand, :cost, :delivery, :send_address, :send_date, :condition, images_attributes:  [:image_name, :_destroy, :id]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :price, :status, :category_id, :brand, :cost, :delivery, :send_address, :send_date, :condition, images_attributes: [:image_name, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_item

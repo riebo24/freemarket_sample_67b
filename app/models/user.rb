@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   validates :nickname, presence: true, uniqueness: true
   # VALID_EMAIL_REGEX = /\A[a-zA-Z0-9_\#!$%&`'*+\-{|}~^\/=?\.]+@[a-zA-Z0-9][a-zA-Z0-9\.-]+\z/
   validates :email, presence: true, uniqueness: true
@@ -20,11 +20,8 @@ class User < ApplicationRecord
   validates :house_number, presence: true
   validates :birthday, presence: true
   validates :profile, presence: true
-  
+
   has_many :comments
   has_many :items
 end
 
-
-     
-    
