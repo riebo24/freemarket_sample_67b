@@ -19,12 +19,12 @@
                 = image.hidden_field :id, value: image.object.id
                 %br/
                 %span.js-remove 削除
-              - if @item.persisted?
-                = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+                - if @item.persisted?
+                  = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
 
             - if @item.persisted?
               .js-file_group{"data-index" => "#{@item.images.count}"}
-                = file_field_tag :image_name, name: "item[images_attributes][#{@item.images.count}][item_name]", class: 'js-file'
+                = file_field_tag :image_name, name: "item[images_attributes][#{@item.images.count}][image_name]", class: 'js-file'
                 .js-remove 削除
         .main__sell__name
           商品名

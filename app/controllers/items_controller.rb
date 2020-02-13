@@ -12,7 +12,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    # binding.pry
     if @item.save!
       redirect_to root_path
     else
@@ -47,7 +46,6 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    # binding.pry
     @item.update(item_params)
     redirect_to item_path(@item.id)
   end
