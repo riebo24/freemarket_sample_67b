@@ -4,22 +4,25 @@
 .active2{
   display: block;
 }
+.active3{
+  display: block;
+}
 
-header{
-  width:100vw;
-  height: 100vh;
-  a{
-    color:black;
-    text-decoration: none;
-  }
-}
-.header{
-  width:80%;
-  height: 100px;
-  margin: 0 auto;
-  background-color:grey;
-  display: flex;
-}
+// header{
+//   width:100vw;
+//   height: 100vh;
+//   a{
+//     color:black;
+//     text-decoration: none;
+//   }
+// }
+// .header{
+//   width:80%;
+//   height: 100px;
+//   margin: 0 auto;
+//   background-color:grey;
+//   display: flex;
+// }
 
 //親カテゴリー
 .parent-wrap{
@@ -29,13 +32,12 @@ header{
   .parent{
     width: 25%;
     height: 100px;
-    h3{
-      line-height: 100px;
-      text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+    
       &:hover{
-        background-color:yellow;
       }
-    }
+    
   }
 }
 
@@ -49,8 +51,11 @@ header{
     width:279px;
     height: 70px;
     line-height: 70px;
+    z-index: 10;
+    position: relative;
+    background-color: white;
     &:hover{
-      background-color: red;
+      background-color: gold;
     }
     span{
       font-size: 14px;
@@ -72,6 +77,27 @@ header{
   background: #fff;
 
   .grand-child{
+    width:279px;
+    height: 70px;
+    line-height: 70px;
+    &:hover{
+      background-color: red;
+    }
+
+  }
+}
+
+//ひ孫カテゴリー
+.grand-child-child-wrap{
+  display: block;
+  width: 10px;
+  position: absolute;
+  top:0;
+  left:279px;
+  bottom:0;
+  background: #fff;
+
+  .grand-child-child{
     width:279px;
     height: 70px;
     line-height: 70px;

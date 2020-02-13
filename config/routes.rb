@@ -6,10 +6,10 @@ Rails.application.routes.draw do
   #  sessions: 'users/sessions',
   #  password: 'users/passwords'
   # }
-
-  devise_scope :user do
-    get 'my_page' => 'users/registrations#my_page'
-  end
+  
+  # devise_scope :user do
+  #   get 'my_page' => 'users/registrations#my_page'
+  # end
 
   root to: 'items#index'
   resources :items do

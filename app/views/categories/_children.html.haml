@@ -1,0 +1,4 @@
+%li.categories__parents__parent__children__child
+  = link_to "#{category.category}", category_path(id: category.id)
+  %ul.categories__parents__parent__grandchildren
+    = render "categories/grandchildren", collection: category.children, as: "children"
