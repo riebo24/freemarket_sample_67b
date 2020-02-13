@@ -1,4 +1,5 @@
 .cado{
+  padding: 10px 10px;
   height: 560px;
   width: 700px;
   background-color: #ffffff;
@@ -13,17 +14,28 @@
     padding: 40px 0 0 0;
     height: 100%;
     margin: 0 168px;
+    &__number {
+      padding: 10px 0px;
+      &__1 {
+        max-width: 50%;
+        &__card-lists {
+          padding: 5px 0px;
+        }
+      }
+    }
     &__deadline{
       margin: 32px 0 0 0;
-      &__center{
-        display: flex;
-        
+      &__top {
+        padding: 5px 0px;
+
       }
     }
     &__code{
       margin: 32px 0 0 0;
-      &__top{
-        margin-top: 10px;
+      &__top{ 
+        &__title {
+          padding: 5px 0px;
+        }
       }
     }
     &__addition{
@@ -54,10 +66,8 @@
   line-height: 1.5;
   cursor: pointer;
   width: 130px;
-  
 }
-
-span{
+.span{
   padding: 12px;
 }
 .btn{
