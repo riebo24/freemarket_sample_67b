@@ -1,48 +1,47 @@
 = link_to "カードの登録", new_card_path
 
 
+.cado
+  .cado__titre
+    クレジットカード情報入力
+  = form_with(url: cards_path, method: :post, name: "inputForm", class:"cado__information", id: "cado__information") do |f|
+    -# (model: card, class:"cado__information")
+    .cado__information__number
+      カード番号
+      .cado__information__number__1.number-top
+        = f.text_field :number, class:"input-default number", placeholder: "半角数字のみ"
+        -# %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => "",class: "input-default"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?73731125", :width => "49"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?73731125", :width => "34"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?73731125", :width => "30"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?73731125", :width => "32"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?73731125", :width => "21"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?73731125", :width => "32"}/
+        %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?73731125", :width => "32"}/
 
--# .cado
--#   .cado__titre
--#     クレジットカード情報入力
--#   = form_with(url: cards_path, method: :post, name: "inputForm", class:"cado__information", id: "cado__information") do |f|
--#     -# (model: card, class:"cado__information")
--#     .cado__information__number
--#       カード番号
--#       .cado__information__number__1
--#         = f.text_field :number, class:"input-default number", placeholder: "半角数字のみ"
--#         -# %input#payment_card_no.input-default{"data-input-type" => "card", :maxlength => "19", :placeholder => "半角数字のみ", :type => "text", :value => "",class: "input-default"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?73731125", :width => "49"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?73731125", :width => "34"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/saison-card.svg?73731125", :width => "30"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?73731125", :width => "32"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?73731125", :width => "21"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?73731125", :width => "32"}/
--#         %img{:alt => "", :height => "20", :src => "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?73731125", :width => "32"}/
-
--#     .cado__information__deadline
--#       .cado__information__deadline__top
--#         有効期限 
--#       .cado__information__deadline__center
--#         .cado__information__deadline__center__text1
--#           = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], prompt: "---", class: "calendar exp_month"
--#           -# [ ["新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], prompt: "---"
--#           -# %select#payment_card_expire_mm.select-default{class: "calendar"}
--#           %span 月
+    .cado__information__deadline
+      .cado__information__deadline__top
+        有効期限 
+      .cado__information__deadline__center
+        .cado__information__deadline__center__text1
+          = f.select :exp_month, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]], prompt: "---", class: "calendar exp_month"
+          -# [ ["新品、未使用"], ["未使用に近い", "未使用に近い"], ["目立った傷や汚れなし", "目立った傷や汚れなし"], ["やや傷や汚れなし", "やや傷や汚れなし"], ["傷や汚れなし", "傷や汚れなし"], ["傷や汚れあり", "傷や汚れあり"], ["全体的に状態が悪い", "全体的に状態が悪い"] ], prompt: "---"
+          -# %select#payment_card_expire_mm.select-default{class: "calendar"}
+          %span 月
  
--#         .cado__information__deadline__center__text1
--#           = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], prompt: "---", class: "calendar exp_year"  
--#           -# %select#payment_card_expire_mm.select-default{class: "calendar"}
--#           %span
--#             年
--#     .cado__information__code
--#       .cado__information__code__top
--#         セキュリティコード
--#       = f.text_field :cvc , placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default cvc"
--#       -# %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
+        .cado__information__deadline__center__text1
+          = f.select :exp_year, [["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]], prompt: "---", class: "calendar exp_year"  
+          -# %select#payment_card_expire_mm.select-default{class: "calendar"}
+          %span
+            年
+    .cado__information__code
+      .cado__information__code__top
+        セキュリティコード
+      = f.text_field :cvc , placeholder: "カード背面4桁もしくは3桁の番号", class: "input-default cvc"
+      -# %input#payment_card_security_code.input-default{:placeholder => "カード背面4桁もしくは3桁の番号", :type => "number", :value => ""}/
 
--#     .cado__information__addition
--#       = f.submit "追加する", class: "btn"
--#       -# %button#submit-button.btn-default.btn-red{:type => "button",class: "btn"} 追加する
--#     .result
+    .cado__information__addition
+      = f.submit "追加する", class: "btn"
+      -# %button#submit-button.btn-default.btn-red{:type => "button",class: "btn"} 追加する
+    .result
 
