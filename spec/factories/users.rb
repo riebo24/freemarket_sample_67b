@@ -11,10 +11,10 @@ FactoryBot.define do
     birthday              {"19840814"}
     profile               {"komidesu"}
     email                 {"kkk@gmail.com"}
-    first_name            {"巨海"}
-    last_name             {"古味"}
-    first_kane            {"コミ"}
-    last_kane             {"コミ"}
+    first_name            {"コミコミコミコミコミ"}
+    last_name             {"コミコミコミコミコミ"}
+    first_kane            {"コミコミコミコミコミ"}
+    last_kane             {"コミコミコミコミコミ"}
 
   end
 
