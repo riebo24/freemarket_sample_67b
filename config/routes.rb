@@ -15,12 +15,14 @@ Rails.application.routes.draw do
   resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
     member do
       get 'confirm'
+      get 'buy'
+      get "edit"
       post 'buy'
     end
   end
 
   resources :comments
-  resources :categorys, only:[:index] 
+  resources :categorys, only:[:index]
 
   resources :images
   resources :users, only: :show
