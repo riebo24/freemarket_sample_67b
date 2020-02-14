@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # end
 
   root to: 'items#index'
-  resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
+  resources :items do
     member do
       get 'confirm'
       post 'buy'
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   end
 
   resources :comments
-  resources :categorys, only:[:index] 
+  resources :categorys, only:[:index]
 
   resources :images
   resources :users, only: :show

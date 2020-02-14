@@ -1,208 +1,140 @@
 // Place all the styles related to the messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 *{
   text-decoration: none;
 }
 .details{
-  width: auto;
-  height: 1600px;
-  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  background-color: #F8F8F8;
   padding: 40px;
-
   &__top{
-    width: 620px;
-    height: 1150px;
+    width: 100%;max-width: 620px;
+    height: 100%;
     background-color: #fff;
     margin: 0 auto;
+    padding: 0 30px 30px;
     &__title{
     text-align: center;
     font-weight: bold;
     font-size: 24px;
+    margin: 10px;
+    padding-top: 10px;
     }
-  
-
-
     &__middle{
       background-color:#fff;
       display: flex;
       flex-direction: column;
-      width: 620px;
-      height: 480px;
       align-items: center;
       padding: 0 auto;
-
       &__top{
-      width: 560px;
-      height: 346px;
-      margin: 0px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #fff;
-      &__a{
+        height: 346px;
         display: flex;
+        flex-direction: column;
       }
-      }
-
-      &__low{
-        width: 400px;
-        height: 87px;
-        margin: 10px 0px 0px;
-        padding-left: 70px;
-        display: flex;
-        background-color: #fff;
-
-        &__center{
-          width: 120px;
-          height: 87px;
-          background-color: #fff;
-      
-        }
+      &__down{
+        width: 620px;
+        text-align: center;
+        margin-top: 10px;
       }
     }
-      
     &__span{
-      margin-bottom: 10px;
-      width: 610px;
-      height: 40px;
-      font-size: 46px;
+      font-size: 45px;
       font-weight: bold;
       text-align: center;
-      background-color: #fff;
     }
-
     &__itembox{
       width: 620px;
       height: 24px;
       font-size: 16px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
       background-color: #fff;
-      &__left{
-        padding-left: 250px;
-        float: left;
-        width: 47px;
-        height: 18px;
-        font-size: 16px;
-        background-color: #fff;
-      }
-      &__right{
-        float: left;
-        width: 64;
-        height: 18;
-        font-size: 16px;
-        background-color:#fff;
-      }
     }
-      
     &__itembox2{
-      background-color:#fff;
-      width: 620px;
-      height: 27px;
-      margin: 0px 0px 30px;
-      font-size: 18px;
+      margin-bottom: 30px;
+      word-wrap: break-word;
     }
-
-  }
-  &__bottom{
-    margin: 30PX 84px;
-    padding: 24px;
-    height: 230px;
-    background-color: #ffffff;
-    text-align: center;
-  }
- 
-    &__item {
-      text-align: center;
-      margin: 0 85px;
-      background-color: #FFF;
-      padding: 20px 0 0 0;
-      &__changeboxes{
+    &__list{
+      font-size: 14px;
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th, table td {
+        border: 1px solid #dedede;
+      }
+      table th{
+        background-color: #eee;
+        width: 100px;
         text-align: center;
-        width: 400px;
-        margin: 10px;
-        padding: 15px 10px;
-        display: inline-block;
-        border-radius: 30px;
-        letter-spacing: 0.1em;
-        color: #fff;
-        -webkit-font-smoothing: antialiased;
-        -moz-font-smoothing: antialiased;
-        background-color: #33cccc;
-        background-size: 200% auto;
-        &___btn{ 
+      }
+      table td{
+        width: 330px;
+        padding: 15px;
+      }
+    }
+  }
+
+
+  .details__top__test{
+    display: flex;
+    padding-top: 30px;
+    font-size: 14px;
+    justify-content: space-between;
+    &__text1{
+      padding: 8px 10px 6px 10px;
+      border-radius: 40px;
+      border: 1px solid #FFB340;
+    }
+    &__text2{
+      padding: 6px 10px;
+      color: #333;
+      border: 1px solid #333;
+    }
+  }
+  .details__top__test__text1 > a{
+    color: #33CCCC;
+  }
+  .details__top__test__text2 > a{
+    color: black;
+  }
+  .comment{
+    width: 100%;
+    max-width: 340px;
+    padding: 15px 10px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 30px;
+    letter-spacing: 0.1em;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    background-color: #33CCCC;
+    background-size: 200% auto;
+  }
+  &__item {
+    text-align: center;
+    background-color: #FFF;
+    width: 100%; max-width:620px;
+    margin: 10px auto 0;
+    padding: 30px;
+    &__changeboxes{
+      text-align: center;
+      width: 400px;
+      margin: 10px;
+      padding: 15px 10px;
+      display: inline-block;
+      border-radius: 30px;
+      letter-spacing: 0.1em;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-font-smoothing: antialiased;
+      background-color: #33CCCC;
+      background-size: 200% auto;
+      &___btn{
       }
     }
   }
 }
-  
-table {
-  border-collapse: collapse;
-  height: 400px;
-  width: 500px;
-}
-table th, table td {
-  border: solid 1px #f8f8f8;
-  
-}
-table th{
-  background-color: #eee;
-  width: 250px;
-  height: 50px;
-}
-
-table td{
-  background-color: #fff;
-  width: 330px;
-  height: 50px;
-}
-
-.details__top__test{
-  display: flex;
-  padding: 10px 20px;
-  margin: 10px auto;
-  font-size: 15px;
-  justify-content: space-between;
-  font-weight: bold;
-  display: flex;
-  
-  &__text1{
-    padding: 6px 10px;
-    border-radius: 40px;
-    border: 1px solid #ffb340; 
-  }
-  &__text2{
-    padding: 6px 10px;
-    color: #333;
-    border: 1px solid #333;
-  }
- 
-}
-
-.details__top__test__text1 > a{
-  color: #33cccc;
-} 
-.details__top__test__text2 > a{
-  color: black;
-}
-
-.comment{
-  width: 100%;
-  max-width: 340px;
-  padding: 15px 10px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 30px;
-  letter-spacing: 0.1em;
-  color: #fff;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  background-color: #33cccc;
-  background-size: 200% auto;
-  
-}
-
-
-
-
