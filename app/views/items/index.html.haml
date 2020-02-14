@@ -115,6 +115,8 @@
         - image = item.images.first 
         = link_to item_path(item.id), class: 'btn100' do
           .top__category__image__left__txst1
+            - if item.buyer_id?
+              .sold_out
             = image_submit_tag image.image_name, class: "image10" , height: "150px" , width: "220px"
             .top__category__image__left__txst1__test1
               = item.name
@@ -138,6 +140,8 @@
         - image = item.images.first 
         = link_to item_path(item.id), class: 'btn100' do
           .top__category__image__left__txst1
+            - if item.buyer_id?
+              .sold_out
             = image_submit_tag image.image_name, class: "image10" , height: "150px" , width: "220px"
             .top__category__image__left__txst1__test1
               = item.name 

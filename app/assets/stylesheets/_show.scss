@@ -28,10 +28,37 @@
       flex-direction: column;
       align-items: center;
       padding: 0 auto;
+
       &__top{
         height: 346px;
         display: flex;
         flex-direction: column;
+        position: relative;
+
+        .sold_out_for_show::before{
+          content: "";
+          top: 0;
+          left: 0;
+          border-bottom: 150px solid transparent;
+          border-left: 150px solid #ea352d;
+          position: absolute;
+          z-index: 100;
+        }
+        
+        .sold_out_for_show::after{
+          content:"soldout";
+          display: block;
+          top: 30px;
+          left: 8;
+          transform: rotate(-45deg);
+          position: absolute;
+          z-index: 101;
+          font-size:25px;
+          font-weight: bold;
+          color: #f8f8f8;
+        }
+
+
       }
       &__down{
         width: 620px;
@@ -134,7 +161,13 @@
       background-color: #33CCCC;
       background-size: 200% auto;
       &___btn{
+        background-color: gray;
       }
     }
   }
 }
+
+.selled_item{
+  background-color: gray;
+}
+
