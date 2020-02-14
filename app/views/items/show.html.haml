@@ -64,7 +64,7 @@
     .details__top__test
       .details__top__test__text1
         = link_to root_path do
-          ★ お気に入り 3
+          ★ お気に入り 30000
       .details__top__test__text2
         = link_to root_path do
           🏴不適切な商品の通報
@@ -95,6 +95,9 @@
         .details__item__changeboxes__btn
           = link_to '購入'
 
+
+.wrapper
+  = render 'shared/image'
 .wrapper
   = render 'shared/footer'
 

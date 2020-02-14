@@ -23,7 +23,7 @@
     &__b{
       display: flex;
       justify-content: space-between;
-      padding: 10px;
+      
       
     }
   }
@@ -91,7 +91,7 @@
           font-size: 24px;
           line-height: 50px;
           margin: 0 0 0 2px;
-          padding: 20px 55px;
+          padding: 20px 50px;
         }
        
         
@@ -181,7 +181,6 @@
     height: 620px;
     width: auto;
     padding: 60px 100px 60px 100px;
-    
     &__title{
       font-size: 27px;
       text-align: center;
@@ -198,9 +197,7 @@
         width: 315px;
         height: 530px;
         text-align: center;
-        &__icon1{
-          
-        }
+  
         &__title1{
           text-align: center;
           margin: 38px 0 10px;
@@ -218,8 +215,7 @@
         width: 315px;
         height: 530px;
         text-align: center;
-        &__icon2{
-        }
+   
         &__title2{
           text-align: center;
           margin: 38px 0 10px;
@@ -237,8 +233,7 @@
         width: 315px;
         height: 530px;
         text-align: center;
-        &__icon3{
-        }
+      
         &__title3{
           text-align: center;
           margin: 38px 0 10px;
@@ -447,6 +442,7 @@
   height: 120px;
   background-color: #3cc1ce;
   z-index: 1;
+  border-radius: 50%;
 }
 
 .top-text{

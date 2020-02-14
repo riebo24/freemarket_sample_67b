@@ -1,6 +1,7 @@
 
 .wrapper
   = render 'shared/header'
+  
   .top__main
     = image_tag 'bg-mainVisual-pict_pc.jpg' , height: '550px' , width: '100%' , class: 'image'
     .top__main__content
@@ -36,7 +37,7 @@
           2
         .top__introduction__main__center__text2
           %span シンプル
-          で使いやすい
+          で使いやす
         .dr
           めんどくさい入力は必要なく、検索も購入もスムーズ！
 
@@ -149,18 +150,10 @@
               .top__category__image__left__txst1__test1__center11
               （税込）
 
-  .top__download
-    = image_tag 'bg-appBanner-pict.jpg' , height: '350px' , width: '100%' , class: 'image'
-    .top__download__letter
-      だれでもかんたん、人生を変えるフリマアプリ
-    .top__download__letter1
-      今すぐ無料ダウンロード！
-      .top__downlad___letter2
-        = image_submit_tag 'AppleStore-icon-438x129 (1).png' , height: '60px' , width: '200px' , class: 'apple'
-        = image_submit_tag 'google-play-badge (2).png' , height: '85px' , width: '200px' , class: 'google'
-
+  
+  .wrapper
+    = render 'shared/image'
   .wrapper
     = render 'shared/footer'
-
 
 
