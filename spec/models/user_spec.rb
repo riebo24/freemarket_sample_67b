@@ -52,13 +52,13 @@ describe User do
     end
 
     it "is invalid with a password that has less than 7 characters " do
-      user = build(:user, password: "aaaaaa")
+      user = build(:user, password: "000000")
       user.valid?
       expect(user.errors[:password]).to include()
     end
 
     it "is valid with a password that has more than 7 characters " do
-      user = build(:user, password: "aaaaaaaa")
+      user = build(:user, password: "0000000")
       expect(user).to be_valid
     end
 
