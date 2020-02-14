@@ -1,5 +1,4 @@
 .cado{
-  padding: 10px 10px;
   height: 560px;
   width: 700px;
   background-color: #ffffff;
@@ -14,36 +13,21 @@
     padding: 40px 0 0 0;
     height: 100%;
     margin: 0 168px;
-    &__number {
-      padding: 10px 0px;
-      &__1 {
-        max-width: 50%;
-        &__card-lists {
-          padding: 5px 0px;
-        }
-      }
-    }
     &__deadline{
       margin: 32px 0 0 0;
-      &__top {
-        padding: 5px 0px;
-
+      &__center{
+        display: flex;
       }
     }
     &__code{
       margin: 32px 0 0 0;
-      &__top{ 
-        &__title {
-          padding: 5px 0px;
-        }
-      }
     }
     &__addition{
       margin: 32px 0 0 0;
     }
   }
 }
-.input-default{
+.input-default.input-default-cvc{
   height: 30px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -51,7 +35,7 @@
   background: #fff;
   line-height: 1.5;
   font-size: 16px;
-  width: 100%;
+  width: 50%;
 }
 
 .calendar{
@@ -67,14 +51,14 @@
   cursor: pointer;
   width: 130px;
 }
-.span{
+
+span{
   padding: 12px;
 }
 .btn{
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  width: 100%;
   height: 50px;
 }
 
