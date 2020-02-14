@@ -86,18 +86,18 @@
   -# 上記、実装予定のためコメントアウトで置いております：楠山
   
   .details__item
-    - if user_signed_in? && @item.seller_id == current_user.id
+    - if @item.buyer_id?
+      .details__item__changeboxes.selled_item
+        .details__item__changeboxes__btn
+          購入済み
+
+    - elseif user_signed_in? && @item.seller_id == current_user.id
       .details__item__changeboxes
         .details__item__changeboxes__btn
           = link_to '商品の編集', edit_item_path(@item.id)
       .details__item__changeboxes
         .details__item__changeboxes__btn
           = link_to '削除', "#{@item.id}", method: :delete
-
-    - elsif @item.buyer_id?
-      .details__item__changeboxes.selled_item
-        .details__item__changeboxes__btn
-          購入済み
 
     - else
       .details__item__changeboxes
