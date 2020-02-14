@@ -28,7 +28,7 @@
     .details__top__itembox2
       商品説明
     .details__top__itembox2
-      = @item.status
+      %p= @item.status
     .details__top__list
       %table{border:  "1"}
         %tr
@@ -80,6 +80,7 @@
   -#     %form{cols:  "120",row:  "10"}
   -#   .comment
   -#     = link_to 'コメントする'
+  -# 上記、実装予定のためコメントアウトで置いております：楠山
   .details__item
     - if user_signed_in? && @item.seller_id == current_user.id
       .details__item__changeboxes

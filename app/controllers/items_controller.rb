@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  before_action :set_item, only: :edit, :update, :show
   def index
     @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)
     @categories = Category.where(ancestry: 1)
@@ -36,18 +37,18 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
-    @item.update(item_params)
-    redirect_to item_path(@item.id)
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      redirect_to edit_item_path(@item.id)
+    end
   end
 
 private
