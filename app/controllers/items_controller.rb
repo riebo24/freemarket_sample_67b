@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, only: :new
+  # before_action :set_item, only: :edit, :update, :show
   def index
     @items = Item.includes(:images).all.limit(3).order(updated_at: :desc)
     @categories = Category.where(ancestry: 1)
