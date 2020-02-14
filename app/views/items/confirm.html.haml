@@ -1,40 +1,36 @@
 .confirmation
   =render 'header'
   .confirmation__main
-    = form_for :item, url: buy_item_path(@item.id)  do |f|
+    = form_for @confirm do |f|
       .confirmation__main__header
         購入内容の確認
       .confirmation__main__item
-        =image_tag @item.images.first.image_name.url, class: "confirmation__main__item__image"
+        =image_tag "82501127.jpeg", class: "confirmation__main__item__image"
         .confirmation__main__item__text
           .confirmation__main__item__text__info
-            = @item.name
-            ¥
-            = @item.price
-            (税込)
-            = @item.cost
+            商品名
+            ¥500(税込)
+            送料込み
       .confirmation__main__buy
         .confirmation__main__buy__header
           .confirmation__main__buy__header__box
             .confirmation__main__buy__header__box__text
               支払い金額
             .confirmation__main__buy__header__box__price
-              ¥
-              = @item.price
-          -# .confirmation__main__buy__header__point
-          -#   ここにポイントの表示が必要かも
+              ¥500
+          .confirmation__main__buy__header__point
+            ここにポイントの表示が必要かも
         .confirmation__main__buy__way
           .confirmation__main__buy__way__box
             .confirmation__main__buy__way__content.bold
               支払い方法
             .confirmation__main__buy__way__content
               クレジットカード
+              <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_0e17fba3d10886b3eddc8c95"></script>
               %br
-              = "**** **** **** " + @default_card_information.last4
+              ************9110
               %br
-              有効期限
-              = @exp_month + " / " + @exp_year
-
+              有効期限 11 / 24
           .confirmation__main__buy__way__content
             = link_to "変更する", "#", class:"change"
         .confirmation__main__buy__place
