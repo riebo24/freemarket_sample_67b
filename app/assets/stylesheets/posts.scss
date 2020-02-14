@@ -275,6 +275,7 @@
         
      
         &__txst1{
+          position: relative;
           *{
             color: black;
           }
@@ -485,3 +486,24 @@
   margin-bottom: 12px;
 }
 
+.sold_out::before{
+  content: "";
+  top: 0;
+  left: 0;
+  border-bottom: 100px solid transparent;
+  border-left: 100px solid #ea352d;
+  position: absolute;
+  z-index: 100;
+}
+
+.sold_out::after{
+  content:"soldout";
+  display: block;
+  top: 20px;
+  left: 10;
+  transform: rotate(-45deg);
+  position: absolute;
+  z-index: 101;
+  font-size: 20px;
+  color: #f8f8f8;
+}
