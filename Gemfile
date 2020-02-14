@@ -95,7 +95,8 @@ gem 'devise-i18n-views'
 
 gem 'payjp'
 
+gem 'jquery-turbolinks' #jqueryとturbolinksを共存させるためのgem
 gem 'active_hash'
 
-
+gem 'dotenv-rails'
 
