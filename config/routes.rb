@@ -12,11 +12,12 @@ Rails.application.routes.draw do
   # end
 
   root to: 'items#index'
-  resources :items do
-    collection do
+  resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
+    member do
       get 'confirm'
       get 'buy'
       get "edit"
+      post 'buy'
     end
   end
 
@@ -25,6 +26,14 @@ Rails.application.routes.draw do
 
   resources :images
   resources :users, only: :show
+
+  resources :cards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'cards#show'
+      post 'pay', to: 'cards#pay'
+      post 'delete', to: 'cards#delete'
+    end
+  end
 
 
 end
