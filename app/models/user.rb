@@ -3,11 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
   
   validates :nickname, presence: true, uniqueness: true, length: { maximum: 10}
+
   VALID_EMAIL_REGEXP = /\A[a-zA-Z0-9_\#!$%&`'*+\-{|}~^\/=?\.]+@[a-zA-Z0-9][a-zA-Z0-9\.-]+\z/
   validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEXP }
   VALID_NAME_REGEXP = /\A[^ -~｡-ﾟ]/
+
   validates :first_name, presence: true, 
      format: { with: VALID_NAME_REGEXP }, length: { maximum: 10}
   validates :last_name, presence: true, 
@@ -24,14 +27,9 @@ class User < ApplicationRecord
   validates :house_number, presence: true
   validates :birthday, presence: true
   validates :profile, presence: true
-  
+
   has_many :comments
   has_many :items
   has_many :cards
 end
 
-
-
-
-     
-    
