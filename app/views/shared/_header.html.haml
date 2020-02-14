@@ -4,18 +4,18 @@
     = image_submit_tag 'icon_camera.png' , height: '50%' , width: '50%' , class: 'logooo'
   .top__header
     .top__header__a
-      %h1 
+      %h1
         = image_tag "logo.png", class: "image100" , height: "45px" , width: "140px"
       = form_with(url: root_path, local: true, method: :get) do |f|
         = f.text_field :keyword, placeholder: "キーワードから探す", class: "serch1"
         = image_submit_tag 'icon-search 1.png' , height: '20px' , width: '20px' , class: 'logoo'
-        
+
     .top__header__b
       %ul.parent-wrap.top__header__b__1
         %li.parent
           %span カテゴリーから探す
           %ul.child-wrap
-            - @categories.each do |category|  
+            -# - @categories.each do |category|  
               %li.child
                 -# =link_to '/' do（最後に）復活させる
                 %span                                  
@@ -54,7 +54,7 @@
                 -# = render "categories/header_child", collection: @category_children1, as: "category"
         = link_to "ブランド",  class: 'btn1'
       .top__header__b__2
-        - if user_signed_in? 
+        - if user_signed_in?
           = current_user.nickname
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn1'
           = link_to "マイページ", user_path(current_user.id), class: 'btn1'
@@ -62,7 +62,3 @@
         - else
           = link_to "ログイン", new_user_session_path, class: 'btn1'
           = link_to "新規会員登録", new_user_registration_path, class: 'btn1'
-         
-
-
-      

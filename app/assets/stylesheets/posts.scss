@@ -13,6 +13,12 @@
     &__a{
       display: flex;
       position: relative;
+      .serch1{
+        margin: 2px 0 0 30px;
+        width: 70vw;
+        height: 30px;
+        
+      }
     }
     &__b{
       display: flex;
@@ -421,12 +427,6 @@
   background-size: 18px;
   padding-right: 30px;
 
-}
-.serch1{
-  margin: 2px 0 0 30px;
-  width: 800px;
-  height: 30px;
-  
 }
 
 .logoo{
