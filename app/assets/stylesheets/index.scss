@@ -8,23 +8,23 @@
   display: block;
 }
 
-// header{
-//   width:100vw;
-//   height: 100vh;
-//   a{
-//     color:black;
-//     text-decoration: none;
-//   }
-// }
-// .header{
-//   width:80%;
-//   height: 100px;
-//   margin: 0 auto;
-//   background-color:grey;
-//   display: flex;
-// }
+header{
+  width:100vw;
+  height: 100vh;
+  a{
+    color:black;
+    text-decoration: none;
+  }
+}
+.header{
+  width:80%;
+  height: 100px;
+  margin: 0 auto;
+  background-color:grey;
+  display: flex;
+}
 
-//親カテゴリー
+// 親カテゴリー
 .parent-wrap{
   display: flex;
   width: 100%;
@@ -43,7 +43,7 @@
 
 //子カテゴリー
 .child-wrap{
-  display: block; //のちにdisplay:none；にします
+  display: none; //のちにdisplay:none；にします
   background-color:white;
   width:  auto;
   position: absolute;
@@ -51,7 +51,7 @@
     width:279px;
     height: 70px;
     line-height: 70px;
-    z-index: 10;
+    z-index: 100;
     position: relative;
     background-color: white;
     &:hover{
@@ -66,44 +66,44 @@
   }
 }
 
-//孫カテゴリー
-.grand-child-wrap{
-  display: block; //のちにdisplay:none；にします
-  width:auto;
-  position: absolute;
-  top:0;
-  left:279px;
-  bottom:0;
-  background: #fff;
+// //孫カテゴリー
+// .grand-child-wrap{
+//   display: block;
+//   width: 10px;
+//   position: absolute;
+//   top:0;
+//   left:279px;
+//   bottom:0;
+//   background: #fff;
 
-  .grand-child{
-    width:279px;
-    height: 70px;
-    line-height: 70px;
-    &:hover{
-      background-color: red;
-    }
+//   .grand-child{
+//     width:279px;
+//     height: 70px;
+//     line-height: 70px;
+//     &:hover{
+//       background-color: red;
+//     }
 
-  }
-}
+//   }
+// }
 
-//ひ孫カテゴリー
-.grand-child-child-wrap{
-  display: block;
-  width: 10px;
-  position: absolute;
-  top:0;
-  left:279px;
-  bottom:0;
-  background: #fff;
+// //ひ孫カテゴリー
+// .grand-child-child-wrap{
+//   display: block;
+//   width: 10px;
+//   position: absolute;
+//   top:0;
+//   left:279px;
+//   bottom:0;
+//   background: #fff;
 
-  .grand-child-child{
-    width:279px;
-    height: 70px;
-    line-height: 70px;
-    &:hover{
-      background-color: red;
-    }
+//   .grand-child-child{
+//     width:279px;
+//     height: 70px;
+//     line-height: 70px;
+//     &:hover{
+//       background-color: red;
+//     }
 
-  }
-}
+//   }
+// }

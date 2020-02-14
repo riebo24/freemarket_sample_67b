@@ -2,7 +2,8 @@
 
   .headder
     = render 'devise/shared/headder'
-    
+
+  .passwaord-field  
     %h2 パスワードをお忘れですか?
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = render "devise/shared/error_messages", resource: resource
@@ -12,7 +13,10 @@
         = f.email_field :email, autofocus: true, autocomplete: "email"
       .actions
         = f.submit "パスワード再登録の方法を送る"
-    = render "devise/shared/links"
+      .btns
+        = link_to "ログイン", new_session_path(resource_name), class: 'btns__action'
+        = link_to "新規登録", new_registration_path(resource_name), class: 'btns__action'
+    -# = render "devise/shared/links"
   
   .footer
     = render 'devise/shared/footer'

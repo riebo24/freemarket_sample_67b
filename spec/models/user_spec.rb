@@ -52,15 +52,14 @@ describe User do
     end
 
     it "is invalid with a password that has less than 7 characters " do
-      user = build(:user, password: "aaaaaaa")
+      user = build(:user, password: "aaaaaa")
       user.valid?
       expect(user.errors[:password]).to include()
     end
 
-    it "is valid with a password that has more than 8 characters " do
+    it "is valid with a password that has more than 7 characters " do
       user = build(:user, password: "aaaaaaaa")
       expect(user).to be_valid
-      
     end
 
     it "is invalid without a password_confirmation although with a password" do
@@ -118,7 +117,7 @@ describe User do
     end
 
     it "is valid with a first_name that has less than 10 characters " do
-      user = build(:user, first_name: "aaaaaaaaaa")
+      user = build(:user, first_name: "コミコミコミコミコミ")
       expect(user).to be_valid
     end
 
@@ -135,7 +134,7 @@ describe User do
     end
 
     it "is valid with a last_name that has less than 10 characters " do
-      user = build(:user, last_name: "aaaaaaaaaa")
+      user = build(:user, last_name: "コミコミコミコミコミ")
       expect(user).to be_valid
     end
 
@@ -152,7 +151,7 @@ describe User do
     end
 
     it "is valid with a first_kane that has less than 10 characters " do
-      user = build(:user, first_kane: "aaaaaaaaaa")
+      user = build(:user, first_kane: "コミコミコミコミコミ")
       expect(user).to be_valid
     end
 
@@ -169,7 +168,7 @@ describe User do
     end
 
     it "is valid with a last_kane that has less than 10 characters " do
-      user = build(:user, last_kane: "aaaaaaaaaa")
+      user = build(:user, last_kane: "コミコミコミコミコミ")
       expect(user).to be_valid
     end
   end
