@@ -12,11 +12,9 @@ Rails.application.routes.draw do
   # end
 
   root to: 'items#index'
-  resources :items,only:[:index, :new, :create, :show, :confirm, :buy , :destroy] do
+  resources :items do
     member do
       get 'confirm'
-      get 'buy'
-      get "edit"
       post 'buy'
     end
   end
