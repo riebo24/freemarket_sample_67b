@@ -51,14 +51,14 @@ describe User do
       expect(user.errors[:password]).to include("が入力されていません。")
     end
 
-    it "is invalid with a password that has less than 7 characters " do
+    it "is invalid without a password that has less than 7 characters " do
       user = build(:user, password: "aaaaaa")
       user.valid?
-      expect(user.errors[:password]).to include()
+      expect(user.errors[:password]).to include("は7文字以上に設定して下さい。")
     end
 
     it "is valid with a password that has more than 7 characters " do
-      user = build(:user, password: "aaaaaaaa")
+      user = build(:user, password: "aaaaaaa")
       expect(user).to be_valid
     end
 
