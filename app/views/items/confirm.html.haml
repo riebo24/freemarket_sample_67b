@@ -1,5 +1,5 @@
 .confirmation
-  =render 'header'
+  = render 'shared/header'
   .confirmation__main
     = form_for :item, url: buy_item_path(@item.id)  do |f|
       .confirmation__main__header
