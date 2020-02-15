@@ -29,14 +29,7 @@ class CardsController < ApplicationController
 
   def index #ユーザーに紐づくカードの一覧
     @cards = Card.where(user_id: current_user.id)
-    if @cards.blank?
-      redirect_to user_path(current_user.id)
-    else
-      Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
-      # customer = Payjp::Customer.retrieve(@card.customer_id)
-      # @default_card_information = customer.cards.retrieve(card.card_id)
-      # ＠customer_cards = 
-    end
+    Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
   end
 
 
