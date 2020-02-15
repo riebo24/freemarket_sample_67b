@@ -1,7 +1,7 @@
 .cado
   .cado__titre
     クレジットカード情報入力
-  = form_tag(pay_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
+  = form_tag(pay_user_cards_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm") do
     .cado__information__number
       %label
         カード番号

@@ -29,7 +29,8 @@ class CardsController < ApplicationController
     if card.blank?
     else
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
+      customer = Payjp::Customer.retrieve(card.customer_id) 
+      #retrieveは、Payjp::Customer（モデル）から必要なデータを持ってくる際に使用する。引数に検索条件を入れる
       customer.delete
       card.delete
     end
@@ -44,6 +45,7 @@ class CardsController < ApplicationController
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
       customer = Payjp::Customer.retrieve(card.customer_id)
       @default_card_information = customer.cards.retrieve(card.card_id)
+      ＠customer_cards = 
     end
   end
 
