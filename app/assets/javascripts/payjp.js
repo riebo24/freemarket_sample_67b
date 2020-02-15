@@ -12,6 +12,7 @@ document.addEventListener(
           exp_year: document.getElementById("exp_year").value
         }; //入力されたデータを取得します。
         Payjp.createToken(card, (status, response) => {
+          console.log("OK")
           if (status === 200) { //成功した場合
             $("#card_number").removeAttr("name");
             $("#cvc").removeAttr("name");

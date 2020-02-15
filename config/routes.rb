@@ -20,18 +20,18 @@ Rails.application.routes.draw do
   end
 
   resources :comments
+
   resources :categorys, only:[:index]
 
   resources :images
+
   resources :users, only: :show do
-    resources :cards, only: [:new, :show] do
+    resources :cards, only: [:new, :show, :index] do
       collection do
-        post 'show', to: 'cards#show'
         post 'pay', to: 'cards#pay'
         post 'delete', to: 'cards#delete'
       end
     end
   end
-
 
 end

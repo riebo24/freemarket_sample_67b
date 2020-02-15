@@ -1,4 +1,7 @@
 .cado
+
+  = link_to "登録カード一覧", user_cards_path(current_user.id), class: "btn"
+
   .cado__titre
     クレジットカード情報入力
   = form_tag(pay_user_cards_path(current_user.id), method: :post, id: 'charge-form',  name: "inputForm") do
@@ -60,3 +63,5 @@
       #card_token.cado__information__addition
       %br
       = submit_tag "追加する", id: "token_submit" , class: "btn"
+
+

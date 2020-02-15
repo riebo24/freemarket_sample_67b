@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
       if card.blank?
         redirect_to new_card_path
       else
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+        Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
         customer = Payjp::Customer.retrieve(card.customer_id)
         @default_card_information = customer.cards.retrieve(card.card_id)
         @exp_month = @default_card_information.exp_month.to_s
@@ -59,7 +59,7 @@ class ItemsController < ApplicationController
      # 購入した際の情報を元に引っ張ってくる
       card = current_user.cards.first
      # テーブル紐付けてるのでログインユーザーのクレジットカードを引っ張ってくる
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials[:PAYJP_PRIVATE_KEY]
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @item.price, #支払金額
