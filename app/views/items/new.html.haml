@@ -38,12 +38,13 @@
           .main__sell__category__left
             %h3  商品の詳細
           .main__sell__category__right
-            .main__sell__category__right__content
+            .main__sell__category__right__content#parent
               .main__sell__category__right__content__item
                 %b カテゴリー
               .main__sell__category__right__content__form
                 %span 必須
-                = f.collection_select :category_id, Category.all, :id, :name, prompt: "---"
+                -# = f.collection_select :category_id, Category.all, :id, :name, prompt: "---", id: "parent_category"
+                = f.select :category, @category_parent_arry, {} , prompt: "---", id: "parent_category"
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b ブランド名

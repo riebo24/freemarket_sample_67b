@@ -5,10 +5,33 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.new
+    @category_parent_arry = ["---"]
+    # セレクトボックスの初期値
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_arry << parent.name
+    end
+    # binding.pry
+    # カテゴリーのモデルから、ancestryがnil(一階層目のカテゴリー)を全て持ってきて、そのnameを@category_parrent_arryに入れる
   end
+
+  #get_category_children（一階層目のカテゴリー＝親カテゴリーが選択された際に動くアクション）と
+  # get_category_grandchildren（二階層目のカテゴリー=子カテゴリーが選択された際に動くアクション）
+  # のフォーマットは、jsonのみ(routes.rbで指定)
+ 
+
+  def get_category_children
+    @category_children = Category.find_by(name: params[:parent_name], ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:children_id]).children
+  end
+
+
 
   def create
     @item = Item.new(item_params)
+    binding.pry
     if @item.save
       redirect_to root_path
     else
