@@ -48,7 +48,7 @@
 |cost|string|null: false|
 |delivery|string|null: false|
 |category_id|references|null: false, foreign_key: true|
-|brand_id|references|foreign_key: true|
+|brand|string||
 |deal|boolean||
 |send_address|string|null: false|
 |send_date|string|null: false|
