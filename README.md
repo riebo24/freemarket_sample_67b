@@ -1,9 +1,10 @@
-# README
-https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
+# freemarket_sample_67b
+- フリマアプリ「メルカリ」のクローンサイト。
+- ER図
+- https://gyazo.com/03c1121bcc4b524cda192e6d3ef40dff
+
 
 ## commentsテーブル
-<!-- commentは１ー多の関係をuserと持っている -->
-<!-- commentは一対多の関係をitemsと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |text|string|null: false|
@@ -14,7 +15,6 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 - belongs_to :item
 
 ## usersテーブル
-<!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false,limit:10|
@@ -48,7 +48,6 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 |cost|string|null: false|
 |delivery|string|null: false|
 |category_id|references|null: false, foreign_key: true|
-<!-- |size_id|references|null: false, foreign_key: true| -->
 |brand_id|references|foreign_key: true|
 |deal|boolean||
 |send_address|string|null: false|
@@ -63,7 +62,6 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 - has_many :comments
 
 ## categorysテーブル
-<!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -73,7 +71,6 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 - has_many :sizes, through: :categorys_sizes
 
 ## imagesテーブル
-<!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |image_name|string|null: false|
@@ -83,31 +80,21 @@ https://gyazo.com/08b8871af07c4a48b17eb235ad73a276
 - belongs_to :item
 
 ## brandsテーブル
-<!-- userは多-多の関係をitemと持っている -->
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 ### Association
 - has_many :items
 
-<!-- ## sizesテーブル
-|colunu|Type|options|
+## cardsテーブル
+|column|Type|Options|
 |------|----|-------|
-|size|string|null: false|
+|card_id|string|null: false|
+|customer_id｜string|null: false|
+|user|references|null: false, foreign_key: true|
 
-### Asociation
-- has_many :items
-- has_many :categorys, through: :categorys_sizes -->
-<!-- 
-## categorys_sizesテーブル
-|colunu|Type|options|
-|------|----|-------|
-|category_id|references|null: false, foreign_key: true|
-|size_id|references|null: false, foreign_key: true|
-
-### Asociation
-- belongs_to :size
-- belongs_to :category -->
+### Association
+- belongs_to :user
 
 
 This README would normally document whatever steps are necessary to get the
