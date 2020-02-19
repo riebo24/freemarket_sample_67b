@@ -52,7 +52,7 @@
       margin: 0 auto;
       &__header{
         line-height: 40px;
-        font-weight: bold;
+        // font-weight: bold;
         border-bottom: solid 1px #ececec;
         padding: 20px 0px;
         &__box{
@@ -141,6 +141,7 @@
       height: 48px;
       padding: 0 16px;
       margin-top: 6px;
+      // font-weight: bold;
     }
     span {
       margin: 0 0 0 8px;
@@ -224,10 +225,13 @@
       justify-content: space-between;
       &__right {
         &__content {
+          margin-top: 10px;
           display: flex;
           justify-content: space-between;
+
           &__form{
-            margin-top: 10px;
+            width: 400px;
+            // margin-top: 10px;
           }
         }
       }
@@ -237,6 +241,16 @@
       border-bottom: solid 1px rgb(241, 241, 241);
       display: flex;
       justify-content: space-between;
+      &__right{
+        .item-price{
+          height: 48px;
+          width: 150px;
+          padding: 10px 16px 8px 16px;
+          box-sizing: border-box;
+          text-align: right;
+          
+        }
+      }
     }
     &__input {
       padding: 40px;
@@ -256,6 +270,7 @@
           color: white;
         }
       }
+
       &__bottom {
 
         width: 285px;

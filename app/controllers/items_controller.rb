@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
     @grandchildren = @grandchild.siblings
     @child = @grandchild.parent
     @children = @grandchild.parent.siblings
-    @parents = @grandchild.roots
+    @parents = @grandchild.root.siblings
     @parent = @child.parent
     if @item.update(item_params)
       redirect_to item_path(@item.id)
