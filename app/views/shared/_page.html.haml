@@ -69,8 +69,5 @@
       = link_to root_path do
         .page__left__bottom__text1
           電話番号の確認
-      = link_to root_path do
         .page__left__bottom__text1
-          ログアウト
-
-  
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn1'

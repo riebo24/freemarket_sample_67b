@@ -4,44 +4,74 @@
 
 .top{
 
-  &__header{              
-    width: 80%;                
-    height: 90px;   
+  &__header{
+    width: 80vw;
+    height: 90px;
     background-color: #fff;
-    margin: 20px 10px 10px 10px;
-    padding: 0px 120px 0px 120px;
+    margin: 20px auto;
+    padding: 0px 60px 0px 60px;
     &__a{
+      width: 100%;
       display: flex;
       position: relative;
+      form{
+        width: 100%;
+      }
       .serch1{
-        margin: 2px 0 0 30px;
-        width: 70vw;
+        margin: 2px 0 0 15px;
+        width: calc(100% - 36px);
         height: 30px;
-        
+
       }
     }
     &__b{
+      width: auto;min-width: 580px;
+      height: 50px;
       display: flex;
       justify-content: space-between;
       padding: 10px;
-      
+      &__1{
+        a{
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          font-size: 14px;
+          background-position: center right;
+          background-size: 18px;
+          padding-right: 30px;
+        }
+      }
+      &__2{
+        max-width: 360px;min-width: 360px;
+        text-align: end;
+        a{
+          width: 30px;
+          color: #333;
+          text-decoration: none;
+          line-height: 32px;
+          font-size: 14px;
+          background-position: center right;
+          background-size: 18px;
+          padding-left: 10px;
+        }
+      }
     }
   }
   &__main {
     position: relative;
 
     &__content{
-      position: absolute; 
+      position: absolute;
       top:200px;
       left:40px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
       font-size: 60px;
       line-height: 1.2;
       color: #fff;
-     
+
     }
     &__text{
-      position: absolute; 
+      position: absolute;
       top:270px;
       left:40px;
       text-shadow: 0 0 5px rgba(0,0,0,0.4);
@@ -49,14 +79,14 @@
       color: #fff;
       line-height: 1.77778;
       margin: 16px 0 0 0;
-    
+
     }
   }
-  
+
   &__introduction{
     height: 520px;
     padding: 60px 20px 60px 20px;
-    
+
     &__title{
       text-align: center;
       font-size: 26px;
@@ -65,17 +95,15 @@
       margin-bottom: 25px;
       padding-bottom: 15px;
       position: relative;
-      
 
     }
     &__main{
       display: flex;
       margin: 0 110px;
-      
-      
+
       &__left{
         position: relative;
-        
+
         &__box1{
           position: absolute;
           top: 0px;
@@ -93,13 +121,12 @@
           margin: 0 0 0 2px;
           padding: 20px 55px;
         }
-       
-        
+
       }
       &__center{
         margin: 0 56px;
         position: relative;
-        
+
         &__box2{
           position: absolute;
           top: 0px;
@@ -140,7 +167,6 @@
       }
       span{
         color: #3cc1ce;
-    
       }
       .dr{
         font-size: 18px;
@@ -150,12 +176,11 @@
     }
   }
 
-  
   &__image{
     position: relative;
-        
+
     &__text2{
-      position: absolute; 
+      position: absolute;
       top:100px;
       left:90px;
       font-size: 27px;
@@ -165,7 +190,7 @@
 
     }
     &__text3{
-      position: absolute; 
+      position: absolute;
       top:140px;
       left:90px;
       font-size: 18px;
@@ -173,7 +198,6 @@
       line-height: 1.5;
       color: white;
     }
-    
   }
 
   &__fulima{
@@ -181,7 +205,6 @@
     height: 620px;
     width: auto;
     padding: 60px 100px 60px 100px;
-    
     &__title{
       font-size: 27px;
       text-align: center;
@@ -198,9 +221,7 @@
         width: 315px;
         height: 530px;
         text-align: center;
-        &__icon1{
-          
-        }
+
         &__title1{
           text-align: center;
           margin: 38px 0 10px;
@@ -268,22 +289,23 @@
     &__image{
       display: flex;
       justify-content: space-between;
-      margin: 25px 260px;
-    
+      margin: 25px auto;
+      width: 800px;
+
       &__left{
         background-color: #fff;
-        
-     
+
         &__txst1{
           position: relative;
           *{
             color: black;
           }
-        
+
           &__test1{
             height: 70px;
             width: 200px;
             padding: 10px;
+            margin-right: 20px;
             &__center1{
               display: flex;
               padding: 5px 0 0 0;
@@ -325,16 +347,15 @@
     color: #3CCACE;
     font-size: 24px;
     text-decoration: none;
-    
+
   }
-  
+
   .top__brand__title2 > a{
     font-weight: bold;
     color: #3CCACE;
     font-size: 24px;
     text-decoration: none;
-  
-    
+
   }
   &__download{
     position: relative;
@@ -357,9 +378,9 @@
       color: white;
     }
   }
-  &__footer{                                
-    width: auto;               
-    height: 240px;  
+  &__footer{
+    width: auto;
+    height: 240px;
     background-color: #272727;
     padding: 60px 0;
     &__description{
@@ -370,22 +391,19 @@
       font-weight: bold;
       text-align:center;
       display: flex;
-      
-      
+
       &__left{
         height: 175px;
         width: 34%;
         &__a{
           font-size: 12px;
           margin: 8px 0 0 0;
-          
         }
-       
+
       }
       &__senta{
         height: 175px;
         width: 33%;
-       
       }
       &__right{
         height: 175px;
@@ -399,7 +417,6 @@
       color: white;
     }
   }
- 
 }
 
 .top__footer__description__left__a > a{
@@ -408,27 +425,7 @@
   font-size: 12px;
   line-height: 32px;
 }
-.top__header__b__1 > a{
-  color: #333;
-  text-decoration: none;
-  line-height: 32px;
-  font-size: 14px;
-  background-position: center right;
-  background-size: 18px;
-  padding-right: 30px;
 
-
-}
-.top__header__b__2 > a{
-  color: #333;
-  text-decoration: none;
-  line-height: 32px;
-  font-size: 14px;
-  background-position: center right;
-  background-size: 18px;
-  padding-right: 30px;
-
-}
 
 .logoo{
   background-color: #3cc1ce;
