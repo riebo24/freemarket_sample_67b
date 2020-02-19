@@ -122,13 +122,14 @@
     font-size: 10px;
   }
 }
+
+//商品出品（item newアクション）・編集（items editアクション）画面
 .item {
   width: 100%;
   height: 100%;
   background-color: rgb(238, 237, 237);
   display: flex;
   justify-content: center;
-}
 
 .main {
   width: 100%; max-width: 700px;
@@ -176,6 +177,8 @@
     &__name {
       padding: 40px;
       border-bottom: solid 1px rgb(241, 241, 241);
+      width: 100%;
+      box-sizing: border-box;
       .item-name {
         width: 95%;
         margin: 8px 0 0;
@@ -184,8 +187,8 @@
       .item-exposition {
         width: 95%;
         height: 120px;
-        margin: 8px 0 0;
-        padding: 10px;
+        margin-top: 8px;
+        padding: 10px 16px 8px;
       }
     }
     &__category {
@@ -195,20 +198,25 @@
       justify-content: space-between;
       &__right {
         &__content {
-        display: flex;
-        justify-content: space-between;
-        &__form {
-          .item-name {
-            width: 364px;
-            height: 48px;
-            padding: 0 16px;
-            margin-top: 6px;
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+            &__form {
+              width: 400px;
+              .category_form{
+                margin-left: auto;
+                .item-name {
+                  width: 400px;
+                  height: 48px;
+                  padding: 0 16px;
+                  margin-top: 10px;
+                  }
+              }
+            }
           }
         }
-        }
-      }
-
     }
+  
     &__delivery {
       padding: 40px;
       border-bottom: solid 1px rgb(241, 241, 241);
@@ -216,8 +224,11 @@
       justify-content: space-between;
       &__right {
         &__content {
-        display: flex;
-        justify-content: space-between;
+          display: flex;
+          justify-content: space-between;
+          &__form{
+            margin-top: 10px;
+          }
         }
       }
     }
@@ -267,5 +278,12 @@
       }
     }
   }
+}
+}
+
+.item-name {
+  width: 90%;
+  margin: 8px 0 0;
+  padding: 10px 16px 8px;
 }
 

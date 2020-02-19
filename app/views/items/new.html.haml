@@ -38,13 +38,14 @@
           .main__sell__category__left
             %h3  商品の詳細
           .main__sell__category__right
-            .main__sell__category__right__content#parent
+            .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b カテゴリー
               .main__sell__category__right__content__form
                 %span 必須
-                -# = f.collection_select :category_id, Category.all, :id, :name, prompt: "---", id: "parent_category"
-                = f.select :category, @category_parent_arry, {} , prompt: "---", id: "parent_category"
+                %br
+                .category_form#parent
+                  = f.collection_select :category, @parents, :id, :name, {prompt: "---"}, id: "parent_category", class: "item-name"
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b ブランド名
@@ -67,16 +68,19 @@
               .main__sell__delivery__rigft__content__form
                 %span 必須
                 = f.select :cost, [ ["送料込み(出品者負担)","送料込み(出品者負担)"], ["着払い(購入者負担)", "着払い(購入者負担)"] ], prompt: "---"
+            .main__sell__delivery__rigft__content
               .main__sell__delivery__rigft__content__item
                 %b 配送の方法
               .main__sell__delivery__rigft__content__form
                 %span 必須
                 = f.select :delivery, [ ["ゆうパック","ゆうパック"], ["クリックぽすと", "クリックぽすと"], ["クロネコヤマト", "クロネコヤマト"]], prompt: "---"
+            .main__sell__delivery__rigft__content
               .main__sell__delivery__rigft__content__item
                 %b 発送元の地域
               .main__sell__delivery__rigft__content__form
                 %span 必須
                 = f.collection_select :send_address, Prefecture.all, :name, :name, prompt: "---"
+            .main__sell__delivery__rigft__content
               .main__sell__delivery__rigft__content__item
                 %b 発送まで日数
               .main__sell__delivery__rigft__content__form
