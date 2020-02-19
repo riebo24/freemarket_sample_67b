@@ -15,7 +15,7 @@
             = f.label :nickname, "ニックネーム", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :nickname, autofocus: true, placeholder: '例）キャベツ太郎', class: 'main-user__fields__element__text'
+          = f.text_field :nickname, autofocus: true, placeholder: 'ニックネーム', class: 'main-user__fields__element__text'
       .main-user__fields
         .main-user__fields__element
           .main-user__fields__element__title
@@ -55,8 +55,8 @@
             .main-user__fields__element__title__notice
               必須
         .main-user__fields__name
-          = f.text_field :first_name, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）山田'
-          = f.text_field :last_name, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '例）真'
+          = f.text_field :first_name, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '名字'
+          = f.text_field :last_name, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '名前'
 
       .main-user__fields
         .main-user__fields__element
@@ -66,8 +66,8 @@
             .main-user__fields__element__title__notice
               必須
         .main-user__fields__name
-          = f.text_field :first_kane, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）ヤマダ'
-          = f.text_field :last_kane, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '例）マコト'
+          = f.text_field :first_kane, autofocus: true, class: 'main-user__fields__name__tag1', placeholder: '例）ミョウジ'
+          = f.text_field :last_kane, autofocus: true, class: 'main-user__fields__name__tag2', placeholder: '例）ナマエ'
 
       .main-user__fields
         .main-user__fields__element
@@ -91,13 +91,13 @@
             = f.label :prefecture, "都道府県", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :prefecture, autofocus: true, class: 'main-user__fields__element__text', placeholder: '東京都'
+          = f.text_field :prefecture, autofocus: true, class: 'main-user__fields__element__text', placeholder: '都道府県'
         .main-user__fields__element
           .main-user__fields__element__title
             = f.label :city, "市町村", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :city, autofocus: true, class: 'main-user__fields__element__text', placeholder: '大阪市'
+          = f.text_field :city, autofocus: true, class: 'main-user__fields__element__text', placeholder: 'お住いの都市'
         .main-user__fields__element
           .main-user__fields__element__title
             = f.label :house_number, "番地", class: 'main-user__fields__element__title__label'
@@ -109,13 +109,13 @@
             = f.label :building_name, "建物名", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__selective
               任意
-          = f.text_field :building_name, autofocus: true, class: 'main-user__fields__element__text', placeholder: '小見マンション'
+          = f.text_field :building_name, autofocus: true, class: 'main-user__fields__element__text', placeholder: '建物の名前'
         .main-user__fields__element
           .main-user__fields__element__title
             = f.label :phone_number , "電話番号", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__selective
               任意
-          = f.text_field :phone_number , autofocus: true, class: 'main-user__fields__element__text', placeholder: '0901234567'
+          = f.text_field :phone_number , autofocus: true, class: 'main-user__fields__element__text', placeholder: '携帯番号（ハイフンは不要です）'
         .main-user__fields__element
           .main-user__fields__element__title
             = f.label :card , "カード番号", class: 'main-user__fields__element__title__label'
@@ -127,13 +127,7 @@
             = f.label :profile , "自己紹介など", class: 'main-user__fields__element__title__label'
             .main-user__fields__element__title__notice
               必須
-          = f.text_field :profile , autofocus: true, class: 'main-user__fields__element__text', placeholder: '私はビートルズのファンです'
-      
-      -# .consent(余力があればウィザード仕様に変更する)
-      -#   「次へ進む」のボタンを押すことにより、利用規約()に同意したものとみなします
-
-      -# = link_to "#", class: "step-forward" do
-      -#   次へ進む
+          = f.text_field :profile , autofocus: true, class: 'main-user__fields__element__text', placeholder: '自己紹介の欄です'
       
       .main-user__explanation
         .main-user__explanation__personal 
@@ -146,7 +140,6 @@
           This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
         .main-user__explanation__action
           = f.submit "登録する"
-    -# = render "devise/shared/links"
 
   .footer
     = render 'devise/shared/footer'
