@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :item do
 
     name              {"商品名"}
-    category_id        {"カテゴリー"}
+    category_id       {"カテゴリー"}
     status            {"1000"}
     condition         {"商品の状態"}
     cost              {"配送方法"}
@@ -12,4 +12,3 @@ FactoryBot.define do
     price             {"300"}
   end
 end
-
