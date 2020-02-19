@@ -132,7 +132,7 @@ private
 
   def correct_user
     @item = Item.find(params[:id])
-    redirect_to root_url if current_user != @item.seller_id
+    redirect_to root_url if current_user.id != @item.seller_id
   end
 
 end
