@@ -1,5 +1,5 @@
 .wrapper
-  = render 'shared/header'
+  = render 'header'
 
 .details
   .details__top
@@ -100,7 +100,7 @@
     - else
       .details__item__changeboxes
         .details__item__changeboxes__btn
-          = link_to '購入', confirm_item_path(@item.id)
+          = link_to '購入手続き', confirm_item_path(@item.id)
 
 .wrapper
   = render 'shared/footer'
