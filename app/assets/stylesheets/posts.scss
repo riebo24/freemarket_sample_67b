@@ -359,6 +359,9 @@
   }
   &__download{
     position: relative;
+    .image{
+      vertical-align: bottom;
+    }
     &__letter{
       position: absolute;
       top: 100px;
