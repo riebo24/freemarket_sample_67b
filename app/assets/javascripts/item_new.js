@@ -5,7 +5,7 @@ $(function(){
     return html;
   }
 
-  //子カテゴリーの表示を作成
+  // 子カテゴリーの表示を作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = `<select prompt="---" id="child_category" class="item-name">
                          <option value="---">---</option>
@@ -15,7 +15,7 @@ $(function(){
     $('.category_form').append(childSelectHtml);
   }
 
-  // //孫カテゴリーの表示作成
+  // 孫カテゴリーの表示作成
   function appendGrandChildrenBox(insertHTML){
     var grandchildSelectHtml = `<select prompt="---" id="grandchild_category" name="item[category_id]" class="item-name">
                                   <option value="---">---</option>
@@ -29,8 +29,6 @@ $(function(){
     var parentCategory = document.getElementById('parent_category').value;
     console.log(parentCategory)
     if (parentCategory != "---"){
-
-      // このif文が上手く機能していない
       $.ajax({
         url: 'get_category_children',
         type: 'GET',

@@ -1,30 +1,29 @@
 document.addEventListener(
   "DOMContentLoaded", e => {
-    if (document.getElementById("token_submit") != null) { //token_submitというidがnullの場合、下記コードを実行しない
-      Payjp.setPublicKey("pk_test_0e17fba3d10886b3eddc8c95"); //ここに公開鍵を直書き
-      let btn = document.getElementById("token_submit"); //IDがtoken_submitの場合に取得されます
-      btn.addEventListener("click", e => { //ボタンが押されたときに作動します
-        e.preventDefault(); //ボタンを一旦無効化します
+    if (document.getElementById("token_submit") != null) { //id属性がtoken_submitの要素が存在すれば、下記コードを実施
+      Payjp.setPublicKey("pk_test_0e17fba3d10886b3eddc8c95");
+      let btn = document.getElementById("token_submit"); //id属性がtoken_submitである要素を取得し変数に代入
+      btn.addEventListener("click", e => { 
+        e.preventDefault(); 
         let card = {
           number: document.getElementById("card_number").value,
           cvc: document.getElementById("cvc").value,
           exp_month: document.getElementById("exp_month").value,
           exp_year: document.getElementById("exp_year").value
-        }; //入力されたデータを取得します。
+        }; //入力されたデータを取得し、cardという変数に代入
         Payjp.createToken(card, (status, response) => {
-          console.log("OK")
-          if (status === 200) { //成功した場合
+          if (status === 200) { //保存に成功した場合
             $("#card_number").removeAttr("name");
             $("#cvc").removeAttr("name");
             $("#exp_month").removeAttr("name");
-            $("#exp_year").removeAttr("name"); //データを自サーバにpostしないように削除
+            $("#exp_year").removeAttr("name"); 
             $("#card_token").append(
-              $('<input type="hidden" name="payjp-token">').val(response.id)
-            ); //取得したトークンを送信できる状態にします
+            $('<input type="hidden" name="payjp-token">').val(response.id)
+            ); 
             document.inputForm.submit();
-            alert("登録が完了しました"); //確認用
+            alert("登録が完了しました"); 
           } else {
-            alert("カード情報が正しくありません。"); //確認用
+            alert("カード情報が正しくありません。");
           }
         });
       });
