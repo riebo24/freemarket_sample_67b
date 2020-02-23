@@ -107,7 +107,7 @@ class ItemsController < ApplicationController
       customer: card.customer_id,
       currency: 'jpy',
       )
-     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
+     # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、jpyをcurrencyへ入れる
       if @item.update(buyer_id: current_user.id)
         flash[:notice] = '購入しました。'
         redirect_to root_path
