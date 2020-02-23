@@ -47,7 +47,7 @@
                 .category_form#parent
                   = f.collection_select :category, @parents, :id, :name, { selected: "#{@parent.id}" }, id: "parent_category", class: 'item-name'
                   = f.collection_select :category, @children, :id, :name, { selected: "#{@child.id}" }, id: "child_category", class: 'item-name edit_child_category'
-                  = f.collection_select :category_id, @grandchildren, :id, :name, {include_blank: "#{@grandchild.name}", selected: "#{@grandchild.name}"}, id: "grandchild_category", class: 'item-name edit_grandchild_category'
+                  = f.collection_select :category_id, @grandchildren, :id, :name, id: "grandchild_category", class: 'item-name edit_grandchild_category'
             .main__sell__category__right__content
               .main__sell__category__right__content__item
                 %b ブランド名
