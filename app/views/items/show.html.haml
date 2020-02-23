@@ -16,8 +16,7 @@
         - @images.each do |image|
           = image_tag image.image_name.url, class: "image111", height: "90px", width: "140px"
     .details__top__span
-      ¥
-      = @item.price
+      = converting_to_jpy(@item.price)
 
     .details__top__itembox
       .details__top__itembox__left
@@ -45,7 +44,10 @@
         %tr
           %th ブランド
           %td
-            = @item.brand
+            - if @item.brand?
+              = @item.brand
+            - else
+              ー
         %tr
           %th 商品の状態
           %td

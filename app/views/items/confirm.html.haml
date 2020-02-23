@@ -10,8 +10,7 @@
           .confirmation__main__item__text__info
             = @item.name
             %br
-            ¥
-            = @item.price
+            = converting_to_jpy(@item.price)
             (税込)
             %br
             = @item.cost
@@ -21,8 +20,7 @@
             .confirmation__main__buy__header__box__text
               支払い金額
             .confirmation__main__buy__header__box__price
-              ¥
-              = @item.price
+              = converting_to_jpy(@item.price)
 
         .confirmation__main__buy__way
           .confirmation__main__buy__way__box
