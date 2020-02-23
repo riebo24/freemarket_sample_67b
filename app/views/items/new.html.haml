@@ -7,8 +7,9 @@
         .main__sell__top
           %h1 商品の情報を入力
         .main__sell__img
-          %h3 出品画像
-          %span 必須
+          .main__sell__img__header
+            %h3 出品画像
+            %span 必須
           #image-box
             #previews
               - if @item.persisted?
@@ -30,6 +31,7 @@
           商品名
           %span 必須
           = f.text_field :name, class: 'item-name', placeholder: '  商品名 (必須40文字まで)'
+          %br
           %br
           商品の説明
           %span 必須

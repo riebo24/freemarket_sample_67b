@@ -1,5 +1,5 @@
 .wrapper
-  = render 'shared/header'
+  = render 'header'
 
 .details
   .details__top
@@ -93,14 +93,14 @@
     - elsif user_signed_in? && @item.seller_id == current_user.id
       .details__item__changeboxes
         .details__item__changeboxes__btn
-          = link_to '商品の編集', edit_item_path(@item.id)
+          = link_to '商品の編集', edit_item_path(@item.id), class:"deco_none"
       .details__item__changeboxes
         .details__item__changeboxes__btn
-          = link_to '削除', "#{@item.id}", method: :delete
+          = link_to '削除', "#{@item.id}", method: :delete, class:"deco_none"
     - else
       .details__item__changeboxes
         .details__item__changeboxes__btn
-          = link_to '購入', confirm_item_path(@item.id)
+          = link_to '購入手続き', confirm_item_path(@item.id), class:"deco_none"
 
 .wrapper
   = render 'shared/footer'

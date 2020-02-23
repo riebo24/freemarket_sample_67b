@@ -6,8 +6,9 @@
         .main__sell__top
           %h1 商品の情報を入力
         .main__sell__img
-          %h3 出品画像
-          %span 必須
+          .main__sell__img__header
+            %h3 出品画像
+            %span 必須
           #image-box
             #previews
               - if @item.persisted?

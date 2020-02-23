@@ -5,7 +5,8 @@
   .top__header
     .top__header__a
       %h1
-        = image_tag "logo.png", class: "image100" , height: "45px" , width: "140px"
+        = link_to root_path do
+          = image_tag "logo.png", class: "image100" , height: "45px" , width: "140px"
       = form_with(url: root_path, local: true, method: :get) do |f|
         = f.text_field :keyword, placeholder: "キーワードから探す", class: "serch1"
         = image_submit_tag 'icon-search 1.png' , height: '20px' , width: '20px' , class: 'logoo'

@@ -1,24 +1,29 @@
+//商品詳細・編集・購入のヘッダー
+.confirmation__logo{
+  background-color: #F8F8F8;
+  text-align: center;
+  width: 100%;
+  height: 150px;
+  box-sizing: border-box;
+  padding-top: 50px;
+}
 
 
+//商品購入画面item/confirm
 .confirmation{
-  background-color: #ececec;
   height: 100%;
   width: 100%;
   position: fixed;
   font-size: 14px;
   overflow: scroll;
+  background-color: #F8F8F8;
 
-  &__logo{
-    text-align: center;
-    padding: 40px;
-    background-color: #ececec;
-  }
 
   &__main{
-    background-color: white;
-    height: 800px;
+    background-color: #fff;
     width: 700px;
     margin: 0 auto;
+    padding-bottom: 40px;
     text-align: center;
 
     &__header{
@@ -42,7 +47,10 @@
         height: 100px;
         text-align: left;
         font-size: 14px;
-        line-height: 100px;
+        line-height: 30px;
+        &__info{
+        padding-left: 30px;
+        }
       }
     }
 
@@ -52,7 +60,6 @@
       margin: 0 auto;
       &__header{
         line-height: 40px;
-        // font-weight: bold;
         border-bottom: solid 1px #ececec;
         padding: 20px 0px;
         &__box{
@@ -83,13 +90,14 @@
       }
     }
     &__submit-btn{
-      background-color: #ea352d;
+      background-color: #33CCCC;
       height: 50px;
       width: 350px;
       line-height: 50px;
       color: white;
       font-weight: bold;
       margin: 10px auto;
+      border: none;
 
     }
   }
@@ -104,12 +112,10 @@
   color: #0099e8;
 }
 
-
-
 .footer{
   text-align: center;
-  padding-bottom: 40px;
-  background-color: #ececec;
+  padding: 40px 0px;
+  background-color: #F8F8F8;
   &-link {
     text-decoration: none;
     touch-action: manipulation;
@@ -123,34 +129,52 @@
   }
 }
 
+
+
 //商品出品（item newアクション）・編集（items editアクション）画面
 .item {
   width: 100%;
   height: 100%;
-  background-color: rgb(238, 237, 237);
+  background-color: #F8F8F8;
   display: flex;
   justify-content: center;
 
 .main {
   width: 100%; max-width: 700px;
   background: #fff;
-  font-size: 14px;
   &__sell {
+    &__img{
+      &__header{
+        display: flex;
+        justify-content: baseline;
+      }
+      #image-box{
+        .js-file_group{
+          .js-remove{
+            font-size: 12px;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+          }
+        }
+
+      }
+    }
     #item_category_id, #item_size_id, #item_condition, #item_cost, #item_delivery, #item_send_address, #item_send_date {
       width: 400px;
       height: 48px;
       padding: 0 16px;
       margin-top: 6px;
-      // font-weight: bold;
     }
     span {
+      height: 15px;
       margin: 0 0 0 8px;
       padding: 2px 4px;
       border-radius: 2px;
       color: #fff;
       font-size: 12px;
       vertical-align: top;
-      background-color: red;
+      background-color: #33CCCC;
+      line-height: 20px;
     }
     span.gray {
       margin: 0 0 0 8px;
@@ -164,6 +188,8 @@
     span.js-remove {
       background-color: #fff;
       color: black;
+      font-size: 12px;
+      margin-top: 300px;
     }
     &__top {
       text-align: center;
@@ -184,12 +210,14 @@
         width: 95%;
         margin: 8px 0 0;
         padding: 10px 16px 8px;
+        border: solid 1px #c0c0c0;
       }
       .item-exposition {
         width: 95%;
         height: 120px;
         margin-top: 8px;
         padding: 10px 16px 8px;
+        border: solid 1px #c0c0c0;
       }
     }
     &__category {
@@ -211,6 +239,7 @@
                   height: 48px;
                   padding: 0 16px;
                   margin-top: 10px;
+                  border: solid 1px #c0c0c0;
                   }
               }
             }
@@ -231,7 +260,6 @@
 
           &__form{
             width: 400px;
-            // margin-top: 10px;
           }
         }
       }
@@ -262,17 +290,24 @@
         }
       }
       &__middle {
-        padding: 40px 0 25px;
+
+        width: 285px;
+        height: 50px;
+        background-color: #33CCCC;
+        border: none;
+        margin: 20px auto;
         .sell-item {
-          width: 100vw; max-width: 640px;
+
+          width: 285px;
           height: 50px;
-          background-color: red;
+          background-color: #33CCCC;
           color: white;
+          border: none;
+          margin: 0 auto;
         }
       }
 
       &__bottom {
-
         width: 285px;
         height: 50px;
         position: relative;

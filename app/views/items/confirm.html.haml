@@ -1,5 +1,5 @@
 .confirmation
-  = render 'shared/header'
+  = render 'header'
   .confirmation__main
     = form_for :item, url: buy_item_path(@item.id)  do |f|
       .confirmation__main__header
@@ -9,9 +9,11 @@
         .confirmation__main__item__text
           .confirmation__main__item__text__info
             = @item.name
+            %br
             ¥
             = @item.price
             (税込)
+            %br
             = @item.cost
       .confirmation__main__buy
         .confirmation__main__buy__header
@@ -21,8 +23,7 @@
             .confirmation__main__buy__header__box__price
               ¥
               = @item.price
-          -# .confirmation__main__buy__header__point
-          -#   ここにポイントの表示が必要かも
+
         .confirmation__main__buy__way
           .confirmation__main__buy__way__box
             .confirmation__main__buy__way__content.bold
@@ -42,11 +43,15 @@
             .confirmation__main__buy__place__content.bold
               配送先
             .confirmation__main__buy__place__content
-              〒000-0000
+              〒
+              = current_user.post_number.to_s.insert(3, '-')
               %br
-              大阪府吹田市江坂町0-0-0
+              = current_user.prefecture
+              = current_user.city
+              = current_user.house_number
               %br
-              名前
+              = current_user.first_name
+              = current_user.last_name
           .confirmation__main__buy__place__content.change
             = link_to "変更する", "#", class:"change"
       = f.submit "購入する", class:"confirmation__main__submit-btn"
